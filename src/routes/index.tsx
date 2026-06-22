@@ -151,8 +151,10 @@ function Index() {
         <div className="mx-auto max-w-[1280px] grid lg:grid-cols-[420px_1fr] gap-12 items-center">
           <div className="relative h-[460px] md:h-[520px] rounded-[32px] border border-soft overflow-hidden bg-gradient-to-br from-[color:var(--bg-soft)] via-[#1a1d14] to-[#0c0d0a]">
             <div className="absolute inset-0 opacity-60" style={{ background: "radial-gradient(60% 50% at 30% 30%, rgba(182,214,90,0.35), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(242,138,22,0.30), transparent 60%)" }} />
-            <div className="absolute inset-0 grid place-items-center">
-              <span className="font-bold text-[140px] md:text-[180px] leading-none tracking-tighter bg-gradient-to-br from-[color:var(--lime)] to-[color:var(--orange)] bg-clip-text text-transparent">EY</span>
+            <img src={profile.url} alt="ELMAAROUFY YOUNESS" className="absolute inset-0 h-full w-full object-cover object-top mix-blend-luminosity opacity-95" />
+            <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">ELMAAROUFY</div>
+              <div className="text-cream text-2xl font-bold tracking-tight">Youness</div>
             </div>
           </div>
           <div>

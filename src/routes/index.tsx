@@ -4,6 +4,7 @@ import { ArrowUpRight, Download, Mail, MessageCircle, Linkedin, Instagram, Arrow
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { projects, links } from "@/lib/projects";
+import profile from "@/assets/youness-profile.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({

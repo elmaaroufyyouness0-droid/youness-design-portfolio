@@ -8,6 +8,7 @@ import football from "@/assets/football.jpg.asset.json";
 import eid from "@/assets/eid.jpg.asset.json";
 import jeux from "@/assets/jeux.jpg.asset.json";
 import ceremonie from "@/assets/ceremonie.jpg.asset.json";
+import cvPdf from "@/assets/cv.pdf.asset.json";
 
 export type Project = {
   slug: string;
@@ -186,10 +187,10 @@ export const projects: Project[] = [
 ];
 
 export const links = {
-  email: "mailto:contact@elmaaroufy.com",
-  whatsapp: "https://wa.me/212600000000",
-  linkedin: "https://www.linkedin.com/",
-  behance: "https://www.behance.net/",
-  instagram: "https://www.instagram.com/",
-  cv: "#",
+  email: "mailto:elmaaroufy11youness@gmail.com",
+  whatsapp: "https://wa.me/qr/HVABHMXCRRAWJ1",
+  linkedin: "#",
+  behance: "#",
+  instagram: "https://www.instagram.com/elm_youness01",
+  cv: cvPdf.url,
 };

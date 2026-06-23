@@ -153,6 +153,18 @@ export const projects: Project[] = [
     deliverables:
       "Champions League poster, player posters, Morocco match day posters, qualified posters, lineup poster, Liverpool match day poster, Manchester City poster et full time poster.",
     size: "md",
+    gallery: [
+      { url: fb01.url, alt: "Champions League Big Game poster" },
+      { url: fb03.url, alt: "Morocco vs Senegal — Match Day cover poster" },
+      { url: fb09.url, alt: "Morocco vs Cameroon — Battle of the Lions" },
+      { url: fb08.url, alt: "Morocco vs Mali — Match Day" },
+      { url: fb04.url, alt: "Morocco Qualified — red poster" },
+      { url: fb05.url, alt: "Morocco Qualified to the Final — green poster" },
+      { url: fb02.url, alt: "Chouaib Bellarouch — Goalkeeper player poster" },
+      { url: fb06.url, alt: "Liverpool Lineup poster" },
+      { url: fb10.url, alt: "Liverpool Matchday poster" },
+      { url: fb12.url, alt: "Morocco Full Time 3-0 poster" },
+    ],
   },
   {
     slug: "eid-posters",

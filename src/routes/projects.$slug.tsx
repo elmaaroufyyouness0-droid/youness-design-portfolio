@@ -90,7 +90,7 @@ function ProjectPage() {
           <h2 className="text-2xl md:text-3xl font-semibold text-cream">Gallery</h2>
           {p.gallery && p.gallery.length > 0 ? (
             <div className="mt-6 columns-1 sm:columns-2 lg:columns-2 gap-6 [column-fill:_balance]">
-              {p.gallery.map((g, i) => (
+              {p.gallery.map((g: { url: string; alt: string }, i: number) => (
                 <div key={i} className="mb-6 break-inside-avoid rounded-2xl overflow-hidden border border-soft bg-card-soft">
                   <img src={g.url} alt={g.alt} loading="lazy" className="w-full h-auto block" />
                 </div>

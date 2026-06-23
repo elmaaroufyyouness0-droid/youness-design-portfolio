@@ -33,6 +33,16 @@ import brochureOutside from "@/assets/brochure/brochure-travel-outside-panels-01
 import brochureInside from "@/assets/brochure/brochure-travel-inside-panels-02.jpg.jpg.asset.json";
 import bugattiPoster from "@/assets/bugatti-chiron-car-poster-design-01.jpg.png.asset.json";
 
+import ck01 from "@/assets/chikilita/chikilita-chocolate-packaging-description-01.jpg.jpg.asset.json";
+import ck02 from "@/assets/chikilita/chikilita-chocolate-packaging-layout-front-back-02.jpg.jpeg.asset.json";
+import ck03 from "@/assets/chikilita/chikilita-chocolate-advertising-poster-03.jpg.jpg.asset.json";
+import ck04 from "@/assets/chikilita/chikilita-chocolate-product-mockup-04.jpg.jpg.asset.json";
+import ck05 from "@/assets/chikilita/chikilita-chocolate-color-palette-05.jpg.jpg.asset.json";
+import ck06 from "@/assets/chikilita/chikilita-chocolate-typography-06.jpg.jpg.asset.json";
+import ck07 from "@/assets/chikilita/chikilita-chocolate-dieline-template-07.jpg.jpg.asset.json";
+import ck08 from "@/assets/chikilita/chikilita-chocolate-realistic-box-mockup-08.jpg.jpg.asset.json";
+import ck09 from "@/assets/chikilita/chikilita-chocolate-packaging-flat-preview-09.jpg.jpg.asset.json";
+
 export type Project = {
   slug: string;
   title: string;
@@ -111,6 +121,17 @@ export const projects: Project[] = [
     deliverables:
       "Description du concept, packaging layout, poster publicitaire, mockup produit, palette de couleurs, typographie, dieline template, realistic box mockup et flat preview.",
     size: "md",
+    gallery: [
+      { url: ck01.url, alt: "Chikilita packaging concept description" },
+      { url: ck02.url, alt: "Chikilita packaging layout — front and back" },
+      { url: ck03.url, alt: "Chikilita advertising poster" },
+      { url: ck04.url, alt: "Chikilita product mockup" },
+      { url: ck05.url, alt: "Chikilita color palette" },
+      { url: ck06.url, alt: "Chikilita typography" },
+      { url: ck07.url, alt: "Chikilita dieline template" },
+      { url: ck08.url, alt: "Chikilita realistic box mockup" },
+      { url: ck09.url, alt: "Chikilita packaging flat preview" },
+    ],
   },
   {
     slug: "appelo-juice-packaging",

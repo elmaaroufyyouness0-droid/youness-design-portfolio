@@ -20,6 +20,18 @@ import fb08 from "@/assets/football/morocco-mali-match-day-poster-08.jpg.asset.j
 import fb09 from "@/assets/football/morocco-cameroon-match-day-poster-09.jpg.asset.json";
 import fb10 from "@/assets/football/liverpool-match-day-red-poster-10.jpg.asset.json";
 import fb12 from "@/assets/football/morocco-full-time-winners-poster-12.jpg.asset.json";
+import fb07 from "@/assets/football/man-city-player-poster-07.jpg.jpg.asset.json";
+import fb11 from "@/assets/football/liverpool-vs-city-match-day-poster-11.jpg.jpg.asset.json";
+
+import manualFront from "@/assets/manual/manuel-cours-cover-front-design-01.jpg.jpg.asset.json";
+import manualBack from "@/assets/manual/manuel-cours-cover-back-design-02.jpg.jpg.asset.json";
+import manualBook from "@/assets/manual/manuel-cours-book-mockup-03.jpg.png.asset.json";
+import manualStanding from "@/assets/manual/manuel-cours-standing-book-mockup-04.jpg.jpg.asset.json";
+import manualBackMockup from "@/assets/manual/manuel-cours-back-cover-mockup-05.jpg.png.asset.json";
+
+import brochureOutside from "@/assets/brochure/brochure-travel-outside-panels-01.jpg.jpg.asset.json";
+import brochureInside from "@/assets/brochure/brochure-travel-inside-panels-02.jpg.jpg.asset.json";
+import bugattiPoster from "@/assets/bugatti-chiron-car-poster-design-01.jpg.png.asset.json";
 
 export type Project = {
   slug: string;
@@ -74,12 +86,16 @@ export const projects: Project[] = [
     filter: "Print",
     type: "Academic Project",
     tools: ["Adobe Illustrator", "Adobe Photoshop"],
-    cover: brochure.url,
+    cover: brochureOutside.url,
     alt: "Travel brochure print design",
     description:
       "Conception d’une brochure touristique destinée à présenter une offre de voyage. Le projet met en avant la mise en page, l’organisation de l’information, le choix des images, des couleurs et la hiérarchie visuelle.",
     deliverables: "Face extérieure de la brochure, face intérieure de la brochure.",
     size: "md",
+    gallery: [
+      { url: brochureOutside.url, alt: "Travel brochure outside panels" },
+      { url: brochureInside.url, alt: "Travel brochure inside panels" },
+    ],
   },
   {
     slug: "chikilita-chocolate-packaging",
@@ -118,12 +134,19 @@ export const projects: Project[] = [
     filter: "Print",
     type: "Academic Project",
     tools: ["Adobe Illustrator", "Adobe Photoshop"],
-    cover: null,
+    cover: manualFront.url,
     alt: "Manuel de cours cover design",
     description:
       "Création d’une couverture pour un manuel de cours professionnel. Le projet met l’accent sur la composition, la lisibilité, la hiérarchie de l’information et la présentation du support imprimé à travers différents mockups.",
     deliverables: "Front cover, back cover, book mockup, standing book mockup et back cover mockup.",
-    size: "sm",
+    size: "md",
+    gallery: [
+      { url: manualFront.url, alt: "Manuel de cours front cover design" },
+      { url: manualBack.url, alt: "Manuel de cours back cover design" },
+      { url: manualBook.url, alt: "Manuel de cours book mockup" },
+      { url: manualStanding.url, alt: "Manuel de cours standing book mockup" },
+      { url: manualBackMockup.url, alt: "Manuel de cours back cover mockup" },
+    ],
   },
   {
     slug: "bugatti-chiron-car-poster",
@@ -132,12 +155,13 @@ export const projects: Project[] = [
     filter: "Posters",
     type: "Academic Project",
     tools: ["Adobe Photoshop", "Adobe Illustrator"],
-    cover: bugatti.url,
+    cover: bugattiPoster.url,
     alt: "Bugatti Chiron poster design",
     description:
       "Création d’une affiche automobile pour la Bugatti Chiron. Le projet met en avant un style dynamique, une composition moderne, un contraste visuel fort et une présentation inspirée de la communication publicitaire automobile.",
     deliverables: "Poster design final.",
     size: "md",
+    gallery: [{ url: bugattiPoster.url, alt: "Bugatti Chiron car poster design" }],
   },
   {
     slug: "football-posters",
@@ -161,8 +185,10 @@ export const projects: Project[] = [
       { url: fb04.url, alt: "Morocco Qualified — red poster" },
       { url: fb05.url, alt: "Morocco Qualified to the Final — green poster" },
       { url: fb02.url, alt: "Chouaib Bellarouch — Goalkeeper player poster" },
+      { url: fb07.url, alt: "Erling Haaland — Manchester City player poster" },
       { url: fb06.url, alt: "Liverpool Lineup poster" },
       { url: fb10.url, alt: "Liverpool Matchday poster" },
+      { url: fb11.url, alt: "Liverpool vs Manchester City match day poster" },
       { url: fb12.url, alt: "Morocco Full Time 3-0 poster" },
     ],
   },

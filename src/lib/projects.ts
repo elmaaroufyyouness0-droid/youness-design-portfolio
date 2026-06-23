@@ -238,7 +238,11 @@ export const projects: Project[] = [
 
 export const links = {
   email: "mailto:elmaaroufy11youness@gmail.com",
-  whatsapp: "https://wa.me/qr/HVABHMXCRRAWJ1",
+  whatsapp: "https://wa.me/212654835887",
+  phone: "tel:+212654835887",
+  phoneDisplay: "+212 654 835 887",
+  emailDisplay: "elmaaroufy11youness@gmail.com",
+  location: "Béni Mellal, Maroc",
   linkedin: "#",
   behance: "#",
   instagram: "https://www.instagram.com/elm_youness01",

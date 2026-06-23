@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowUpRight, Download, Mail, MessageCircle, Linkedin, Instagram, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Download, Mail, MessageCircle, Instagram, ArrowRight, Phone, MapPin } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { projects, links } from "@/lib/projects";
@@ -216,11 +216,23 @@ function Index() {
               Je suis disponible pour un stage, une première expérience professionnelle ou une collaboration autour
               du design graphique, branding, packaging, print design et communication visuelle.
             </p>
+            <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl text-cream/90">
+              <a href={links.phone} className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:border-[color:var(--lime)]/55 transition-all">
+                <Phone className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm">{links.phoneDisplay}</span>
+              </a>
+              <a href={links.email} className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:border-[color:var(--lime)]/55 transition-all">
+                <Mail className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm truncate">{links.emailDisplay}</span>
+              </a>
+              <a href={links.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:border-[color:var(--lime)]/55 transition-all">
+                <MessageCircle className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm">{links.phoneDisplay}</span>
+              </a>
+              <div className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3">
+                <MapPin className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm">{links.location}</span>
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <CTA href={links.email} icon={<Mail className="h-4 w-4" />} label="Email" primary />
               <CTA href={links.whatsapp} icon={<MessageCircle className="h-4 w-4" />} label="WhatsApp" />
-              <CTA href={links.linkedin} icon={<Linkedin className="h-4 w-4" />} label="LinkedIn" />
-              <CTA href={links.behance} icon={<ArrowUpRight className="h-4 w-4" />} label="Behance" />
               <CTA href={links.instagram} icon={<Instagram className="h-4 w-4" />} label="Instagram" />
             </div>
           </div>

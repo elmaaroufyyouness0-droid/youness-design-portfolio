@@ -10,6 +10,17 @@ import jeux from "@/assets/jeux.jpg.asset.json";
 import ceremonie from "@/assets/ceremonie.jpg.asset.json";
 import cvPdf from "@/assets/cv.pdf.asset.json";
 
+import fb01 from "@/assets/football/football-champions-league-big-game-poster-01.jpg.asset.json";
+import fb02 from "@/assets/football/morocco-goalkeeper-player-poster-02.jpg.asset.json";
+import fb03 from "@/assets/football/morocco-match-day-cover-poster-03.jpg.asset.json";
+import fb04 from "@/assets/football/morocco-qualified-winners-red-poster-04.png.asset.json";
+import fb05 from "@/assets/football/morocco-qualified-final-green-poster-05.jpg.asset.json";
+import fb06 from "@/assets/football/liverpool-lineup-poster-06.jpg.asset.json";
+import fb08 from "@/assets/football/morocco-mali-match-day-poster-08.jpg.asset.json";
+import fb09 from "@/assets/football/morocco-cameroon-match-day-poster-09.jpg.asset.json";
+import fb10 from "@/assets/football/liverpool-match-day-red-poster-10.jpg.asset.json";
+import fb12 from "@/assets/football/morocco-full-time-winners-poster-12.jpg.asset.json";
+
 export type Project = {
   slug: string;
   title: string;
@@ -22,6 +33,7 @@ export type Project = {
   description: string;
   deliverables: string;
   size: "lg" | "md" | "sm";
+  gallery?: { url: string; alt: string }[];
 };
 
 export const projects: Project[] = [

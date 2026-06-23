@@ -43,6 +43,17 @@ import ck07 from "@/assets/chikilita/chikilita-chocolate-dieline-template-07.jpg
 import ck08 from "@/assets/chikilita/chikilita-chocolate-realistic-box-mockup-08.jpg.jpg.asset.json";
 import ck09 from "@/assets/chikilita/chikilita-chocolate-packaging-flat-preview-09.jpg.jpg.asset.json";
 
+import as01 from "@/assets/asfar/asfar-beni-mellal-brand-cover-01.jpg.jpg.asset.json";
+import as02 from "@/assets/asfar/asfar-beni-mellal-nature-logo-mockup-02.jpg_-_Copie.jpg.asset.json";
+import as03 from "@/assets/asfar/asfar-beni-mellal-brand-description-03.jpg.jpg.asset.json";
+import as05 from "@/assets/asfar/asfar-beni-mellal-logo-main-dark-05.jpg.jpg.asset.json";
+import as06 from "@/assets/asfar/asfar-beni-mellal-logo-main-light-06.jpg.jpg.asset.json";
+import as07 from "@/assets/asfar/asfar-beni-mellal-typography-07.jpg.jpg.asset.json";
+import as08 from "@/assets/asfar/asfar-beni-mellal-color-palette-08.jpg.jpg.asset.json";
+import as09 from "@/assets/asfar/asfar-beni-mellal-logo-variations-09.jpg_-_Copie.jpg.asset.json";
+import as10 from "@/assets/asfar/asfar-beni-mellal-logo-construction-10.jpg.jpg.asset.json";
+import as12 from "@/assets/asfar/asfar-beni-mellal-business-card-12.jpg.jpg.asset.json";
+
 export type Project = {
   slug: string;
   title: string;
@@ -73,6 +84,18 @@ export const projects: Project[] = [
     deliverables:
       "Logo principal, variantes du logo, palette de couleurs, typographie, pattern, carte de visite, t-shirt, casquette, bouteille, bus mockup et présentation finale.",
     size: "lg",
+    gallery: [
+      { url: as01.url, alt: "Asfar Beni Mellal — brand cover" },
+      { url: as03.url, alt: "Asfar Beni Mellal — brand description" },
+      { url: as10.url, alt: "Asfar Beni Mellal — logo construction" },
+      { url: as06.url, alt: "Asfar Beni Mellal — main logo (light)" },
+      { url: as05.url, alt: "Asfar Beni Mellal — main logo (dark)" },
+      { url: as09.url, alt: "Asfar Beni Mellal — logo variations" },
+      { url: as08.url, alt: "Asfar Beni Mellal — color palette" },
+      { url: as07.url, alt: "Asfar Beni Mellal — typography" },
+      { url: as02.url, alt: "Asfar Beni Mellal — nature logo mockup" },
+      { url: as12.url, alt: "Asfar Beni Mellal — business card" },
+    ],
   },
   {
     slug: "serfer-delivery",

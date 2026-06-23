@@ -88,16 +88,23 @@ function ProjectPage() {
       <section className="px-5 md:px-12 lg:px-[72px] py-16">
         <div className="mx-auto max-w-[1280px]">
           <h2 className="text-2xl md:text-3xl font-semibold text-cream">Gallery</h2>
-          <div className="mt-6 rounded-3xl border border-dashed border-soft bg-card-soft p-8 md:p-12 text-center">
-            <p className="text-muted-soft">
-              Les images de la galerie doivent être uploadées depuis le dossier
-              <span className="text-cream font-mono mx-1">04_Projects/{p.slug}</span>.
-            </p>
-            <p className="text-muted-soft text-sm mt-2">
-              Une fois uploadées, elles s’affichent ici en pleine largeur et en grille 2 colonnes.
-            </p>
-          </div>
-          {p.cover && (
+          {p.gallery && p.gallery.length > 0 ? (
+            <div className="mt-6 columns-1 sm:columns-2 lg:columns-2 gap-6 [column-fill:_balance]">
+              {p.gallery.map((g: { url: string; alt: string }, i: number) => (
+                <div key={i} className="mb-6 break-inside-avoid rounded-2xl overflow-hidden border border-soft bg-card-soft">
+                  <img src={g.url} alt={g.alt} loading="lazy" className="w-full h-auto block" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-6 rounded-3xl border border-dashed border-soft bg-card-soft p-8 md:p-12 text-center">
+              <p className="text-muted-soft">
+                Les images de la galerie doivent être uploadées depuis le dossier
+                <span className="text-cream font-mono mx-1">04_Projects/{p.slug}</span>.
+              </p>
+            </div>
+          )}
+          {p.cover && !p.gallery && (
             <div className="mt-8 rounded-3xl overflow-hidden border border-soft">
               <img src={p.cover} alt={p.alt} className="w-full h-auto" />
             </div>

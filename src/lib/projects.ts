@@ -74,6 +74,17 @@ import ap08 from "@/assets/appelo/appelo-juice-front-packaging-08.jpg.jpg.asset.
 import ap09 from "@/assets/appelo/appelo-juice-3d-carton-mockup-09.jpg.jpg.asset.json";
 import ap10 from "@/assets/appelo/appelo-juice-brand-color-palette-10.jpg.jpg.asset.json";
 import ap11 from "@/assets/appelo/appelo-juice-logo-variations-11.jpg.jpg.asset.json";
+import ap05 from "@/assets/appelo/appelo-juice-try-now-poster-05.jpg.asset.json";
+
+import sf01 from "@/assets/serfer/serfer-brand-cover-01.jpg.asset.json";
+import sf02 from "@/assets/serfer/serfer-brand-description-02.jpg.asset.json";
+import sf04 from "@/assets/serfer/serfer-logo-dark-04.jpg.asset.json";
+import sf06 from "@/assets/serfer/serfer-logo-construction-06.jpg.asset.json";
+import sf08 from "@/assets/serfer/serfer-color-palette-08.jpg.asset.json";
+import sf09 from "@/assets/serfer/serfer-logo-icons-09.jpg.asset.json";
+import sf12 from "@/assets/serfer/serfer-app-card-12.jpg.asset.json";
+import sf15 from "@/assets/serfer/serfer-brand-applications-15.jpg.asset.json";
+import sf19 from "@/assets/serfer/serfer-business-card-19.png.asset.json";
 
 export type Project = {
   slug: string;

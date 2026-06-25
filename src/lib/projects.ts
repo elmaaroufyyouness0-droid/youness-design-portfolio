@@ -266,6 +266,10 @@ export const projects: Project[] = [
       "Création de deux affiches pour les occasions de l’Aïd. Le projet met en avant la composition visuelle, l’ambiance événementielle, la typographie arabe et l’utilisation des couleurs et éléments graphiques adaptés au thème.",
     deliverables: "Eid Al Adha poster, Eid Mubarak lantern poster.",
     size: "sm",
+    gallery: [
+      { url: eid01.url, alt: "Eid Al Adha poster design" },
+      { url: eid02.url, alt: "Eid Mubarak lantern poster design" },
+    ],
   },
   {
     slug: "jeux-societe-poster",
@@ -280,6 +284,7 @@ export const projects: Project[] = [
       "Création d’une affiche événementielle pour une journée des jeux de société. Le projet présente l’information de manière claire et visuelle, avec une composition simple, des illustrations de jeux et une mise en page adaptée à un événement scolaire ou associatif.",
     deliverables: "Event poster design final.",
     size: "sm",
+    gallery: [{ url: jeux01.url, alt: "Journée des Jeux de Société event poster" }],
   },
   {
     slug: "ceremonie-remise-diplomes-poster",

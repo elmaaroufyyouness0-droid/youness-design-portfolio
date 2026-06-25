@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowUpRight, Download, Mail, MessageCircle, Instagram, ArrowRight, Phone, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, Mail, MessageCircle, Instagram, ArrowRight, Phone, MapPin, MapPinned, GraduationCap, Sparkles } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { projects, links } from "@/lib/projects";
@@ -110,6 +110,79 @@ function Index() {
         </div>
       </section>
 
+      {/* PROFILE / ABOUT — strong section near the top */}
+      <section id="about" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
+        <div className="mx-auto max-w-[1280px] grid lg:grid-cols-[460px_1fr] gap-12 lg:gap-16 items-center">
+          {/* Profile visual */}
+          <div className="relative">
+            <div className="absolute -inset-6 -z-10 opacity-70" style={{ background: "radial-gradient(50% 50% at 30% 30%, rgba(182,214,90,0.35), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(242,138,22,0.30), transparent 60%)", filter: "blur(40px)" }} />
+            <div className="relative h-[480px] md:h-[560px] rounded-[36px] border border-soft overflow-hidden bg-gradient-to-br from-[#1a1d14] via-[#13160f] to-[#0a0b08] glow-ring">
+              {profile?.url ? (
+                <img src={profile.url} alt="ELMAAROUFY YOUNESS" className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
+              ) : (
+                <div className="absolute inset-0 grid place-items-center">
+                  <span className="text-[180px] font-black tracking-tighter bg-gradient-to-br from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent">EY</span>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+              {/* floating tag */}
+              <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-black/55 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--lime)] animate-pulse" /> Disponible pour stage
+              </div>
+              {/* bottom card */}
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-white/[0.06] backdrop-blur-md border border-white/15 p-5">
+                <div className="text-[10px] tracking-[0.22em] uppercase text-[color:var(--lime)]">ELMAAROUFY</div>
+                <div className="mt-1 text-cream text-2xl md:text-3xl font-bold tracking-tight">Youness</div>
+                <div className="mt-1 text-sm text-cream/75">Graphic Designer Junior · Infographie Prépresse</div>
+                <div className="mt-3 flex items-center gap-4 text-xs text-muted-soft">
+                  <span className="inline-flex items-center gap-1.5"><MapPinned className="h-3.5 w-3.5 text-[color:var(--lime)]" /> Béni Mellal</span>
+                  <span className="inline-flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5 text-[color:var(--lime)]" /> CMC BMK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Profile content */}
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">
+              <Sparkles className="h-3.5 w-3.5" /> À propos de moi
+            </span>
+            <h2 className="mt-3 font-bold text-cream text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-tight">
+              Étudiant créatif, <br className="hidden md:block" />
+              <span className="bg-gradient-to-r from-[color:var(--lime)] to-[color:var(--orange)] bg-clip-text text-transparent">prêt pour le terrain.</span>
+            </h2>
+            <div className="mt-6 space-y-4 text-cream/85 text-base md:text-lg leading-relaxed max-w-[680px]">
+              <p>Je suis ELMAAROUFY YOUNESS, étudiant en première année en Infographie Prépresse au CMC BMK, pôle Art et Industrie Graphique.</p>
+              <p>Je développe mes compétences en design graphique, branding, mise en page, supports print, packaging et préparation des fichiers pour l’impression. À travers mes projets académiques, je cherche à créer des visuels propres, cohérents et adaptés aux besoins de communication.</p>
+              <p>Créatif, organisé et sérieux, je recherche une opportunité de <span className="text-cream font-semibold">stage</span> ou une <span className="text-cream font-semibold">première expérience professionnelle</span> dans une agence, une imprimerie ou une entreprise.</p>
+            </div>
+
+            {/* Stat strip */}
+            <div className="mt-8 grid grid-cols-3 gap-3 max-w-[560px]">
+              {[
+                { k: `${projects.length}`, v: "Projets" },
+                { k: "5+", v: "Catégories" },
+                { k: "1ère", v: "Année CMC" },
+              ].map((s) => (
+                <div key={s.v} className="rounded-2xl border border-soft bg-card-soft px-4 py-3">
+                  <div className="text-cream text-2xl font-bold tracking-tight">{s.k}</div>
+                  <div className="text-[11px] tracking-[0.18em] uppercase text-muted-soft mt-1">{s.v}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={links.cv} className="inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3 text-sm font-semibold hover:bg-[color:var(--green)] hover:-translate-y-0.5 transition-all">
+                <Download className="h-4 w-4" /> Télécharger CV
+              </a>
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-3 text-sm font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all">
+                <Mail className="h-4 w-4" /> Me contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROJECTS */}
       <section id="projects" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1280px]">
@@ -143,37 +216,6 @@ function Index() {
             {visible.map((p) => (
               <ProjectCard key={p.slug} p={p} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section id="about" className="relative py-24 md:py-32 px-5 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1280px] grid lg:grid-cols-[420px_1fr] gap-12 items-center">
-          <div className="relative h-[460px] md:h-[520px] rounded-[32px] border border-soft overflow-hidden bg-gradient-to-br from-[color:var(--bg-soft)] via-[#1a1d14] to-[#0c0d0a]">
-            <div className="absolute inset-0 opacity-60" style={{ background: "radial-gradient(60% 50% at 30% 30%, rgba(182,214,90,0.35), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(242,138,22,0.30), transparent 60%)" }} />
-            <img src={profile.url} alt="ELMAAROUFY YOUNESS" className="absolute inset-0 h-full w-full object-cover object-top mix-blend-luminosity opacity-95" />
-            <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-              <div className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">ELMAAROUFY</div>
-              <div className="text-cream text-2xl font-bold tracking-tight">Youness</div>
-            </div>
-          </div>
-          <div>
-            <span className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">À propos</span>
-            <h2 className="mt-3 font-bold text-cream text-4xl md:text-5xl lg:text-6xl tracking-tight">À propos</h2>
-            <div className="mt-6 space-y-5 text-cream/85 text-lg leading-relaxed max-w-[680px]">
-              <p>Je suis ELMAAROUFY YOUNESS, étudiant en première année en Infographie Prépresse au CMC BMK, pôle Art et Industrie Graphique.</p>
-              <p>Je développe mes compétences en design graphique, branding, mise en page, supports print, packaging et préparation des fichiers pour l’impression. À travers mes projets académiques, je cherche à créer des visuels propres, cohérents et adaptés aux besoins de communication.</p>
-              <p>Créatif, organisé et sérieux, je suis actuellement à la recherche d’une opportunité de stage ou d’une première expérience professionnelle dans une agence, une imprimerie ou une entreprise afin de mettre en pratique mes compétences et continuer à évoluer dans le domaine du design graphique.</p>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href={links.cv} className="inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3 text-sm font-semibold hover:-translate-y-0.5 transition-all">
-                <Download className="h-4 w-4" /> Télécharger CV
-              </a>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-3 text-sm font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all">
-                Me contacter
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -277,11 +319,15 @@ function ProjectCard({ p }: { p: (typeof projects)[number] }) {
         </div>
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+      {/* Hover hint badge */}
+      <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[11px] tracking-[0.18em] uppercase text-cream/85 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+        Voir le projet <ArrowUpRight className="h-3.5 w-3.5 text-[color:var(--lime)]" />
+      </div>
       <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
         <span className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)]">{p.category}</span>
         <div className="mt-2 flex items-end justify-between gap-4">
           <h3 className="text-2xl md:text-3xl font-semibold text-cream tracking-tight transition-transform duration-500 group-hover:-translate-y-1">{p.title}</h3>
-          <span className="shrink-0 grid place-items-center h-11 w-11 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] transition-transform duration-500 group-hover:translate-x-1">
+          <span className="shrink-0 grid place-items-center h-11 w-11 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] transition-transform duration-500 group-hover:translate-x-1.5 group-hover:rotate-[-8deg]">
             <ArrowUpRight className="h-5 w-5" />
           </span>
         </div>

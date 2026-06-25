@@ -78,12 +78,22 @@ import ap05 from "@/assets/appelo/appelo-juice-try-now-poster-05.jpg.asset.json"
 
 import sf01 from "@/assets/serfer/serfer-brand-cover-01.jpg.asset.json";
 import sf02 from "@/assets/serfer/serfer-brand-description-02.jpg.asset.json";
+import sf03 from "@/assets/serfer/serfer-logo-light-background-03.jpg.asset.json";
 import sf04 from "@/assets/serfer/serfer-logo-dark-04.jpg.asset.json";
+import sf05 from "@/assets/serfer/serfer-logo-main-light-05.jpg.asset.json";
 import sf06 from "@/assets/serfer/serfer-logo-construction-06.jpg.asset.json";
+import sf07 from "@/assets/serfer/serfer-typography-07.jpg.asset.json";
 import sf08 from "@/assets/serfer/serfer-color-palette-08.jpg.asset.json";
 import sf09 from "@/assets/serfer/serfer-logo-icons-09.jpg.asset.json";
+import sf10 from "@/assets/serfer/serfer-logo-variations-10.jpg.asset.json";
+import sf11 from "@/assets/serfer/serfer-office-signage-11.jpg.asset.json";
 import sf12 from "@/assets/serfer/serfer-app-card-12.jpg.asset.json";
+import sf13 from "@/assets/serfer/serfer-pattern-light-13.jpg.asset.json";
+import sf14 from "@/assets/serfer/serfer-pattern-dark-14.jpg.asset.json";
 import sf15 from "@/assets/serfer/serfer-brand-applications-15.jpg.asset.json";
+import sf16 from "@/assets/serfer/serfer-van-mockup-16.jpg.asset.json";
+import sf17 from "@/assets/serfer/serfer-shop-signage-17.jpg.asset.json";
+import sf18 from "@/assets/serfer/serfer-thank-you-18.jpg.asset.json";
 import sf19 from "@/assets/serfer/serfer-business-card-19.png.asset.json";
 
 export type Project = {
@@ -153,11 +163,21 @@ export const projects: Project[] = [
     gallery: [
       { url: sf01.url, alt: "Serfer Delivery — brand cover" },
       { url: sf02.url, alt: "Serfer Delivery — brand description" },
+      { url: sf03.url, alt: "Serfer Delivery — logo on light background" },
       { url: sf04.url, alt: "Serfer Delivery — logo on dark background" },
+      { url: sf05.url, alt: "Serfer Delivery — main logo light version" },
       { url: sf06.url, alt: "Serfer Delivery — logo construction grid" },
+      { url: sf07.url, alt: "Serfer Delivery — typography system" },
       { url: sf08.url, alt: "Serfer Delivery — color palette" },
       { url: sf09.url, alt: "Serfer Delivery — logo icon variations" },
+      { url: sf10.url, alt: "Serfer Delivery — logo variations" },
+      { url: sf11.url, alt: "Serfer Delivery — office signage mockup" },
       { url: sf12.url, alt: "Serfer Delivery — app store card" },
+      { url: sf13.url, alt: "Serfer Delivery — light pattern system" },
+      { url: sf14.url, alt: "Serfer Delivery — dark pattern system" },
+      { url: sf16.url, alt: "Serfer Delivery — van mockup" },
+      { url: sf17.url, alt: "Serfer Delivery — shop signage mockup" },
+      { url: sf18.url, alt: "Serfer Delivery — thank you page" },
       { url: sf19.url, alt: "Serfer Delivery — business card mockup" },
       { url: sf15.url, alt: "Serfer Delivery — brand applications (vest, hoodie, bag, cap, tape)" },
     ],

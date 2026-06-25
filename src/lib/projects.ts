@@ -143,13 +143,24 @@ export const projects: Project[] = [
     filter: "Branding",
     type: "Academic Project",
     tools: ["Adobe Illustrator", "Adobe Photoshop"],
-    cover: serfer.url,
+    cover: sf01.url,
     alt: "Serfer Delivery brand identity design",
     description:
       "Création d’une identité visuelle pour une marque de livraison. Le projet présente un univers graphique moderne avec logo, couleurs, typographie, icône, patterns et applications sur différents supports professionnels.",
     deliverables:
       "Logo principal, variantes du logo, icônes, palette de couleurs, typographie, patterns, carte professionnelle, van mockup, signage, brand applications et présentation finale.",
     size: "lg",
+    gallery: [
+      { url: sf01.url, alt: "Serfer Delivery — brand cover" },
+      { url: sf02.url, alt: "Serfer Delivery — brand description" },
+      { url: sf04.url, alt: "Serfer Delivery — logo on dark background" },
+      { url: sf06.url, alt: "Serfer Delivery — logo construction grid" },
+      { url: sf08.url, alt: "Serfer Delivery — color palette" },
+      { url: sf09.url, alt: "Serfer Delivery — logo icon variations" },
+      { url: sf12.url, alt: "Serfer Delivery — app store card" },
+      { url: sf19.url, alt: "Serfer Delivery — business card mockup" },
+      { url: sf15.url, alt: "Serfer Delivery — brand applications (vest, hoodie, bag, cap, tape)" },
+    ],
   },
   {
     slug: "travel-brochure",

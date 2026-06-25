@@ -64,6 +64,17 @@ import eid01 from "@/assets/eid/eid-aladha-01.jpg.asset.json";
 import eid02 from "@/assets/eid/eid-mubarak-lantern-02.jpg.asset.json";
 import jeux01 from "@/assets/jeux/jeux-societe-poster.jpg.asset.json";
 
+import ap01 from "@/assets/appelo/appelo-juice-packaging-layout-01.jpg.jpg.asset.json";
+import ap02 from "@/assets/appelo/appelo-juice-natural-ad-poster-02.jpg.jpg.asset.json";
+import ap03 from "@/assets/appelo/appelo-juice-pink-ad-poster-03.jpg.jpg.asset.json";
+import ap04 from "@/assets/appelo/appelo-juice-product-poster-04.jpg.jpg.asset.json";
+import ap06 from "@/assets/appelo/appelo-juice-lifestyle-mockup-06.jpg.jpg.asset.json";
+import ap07 from "@/assets/appelo/appelo-juice-introduction-page-07.jpg.jpg.asset.json";
+import ap08 from "@/assets/appelo/appelo-juice-front-packaging-08.jpg.jpg.asset.json";
+import ap09 from "@/assets/appelo/appelo-juice-3d-carton-mockup-09.jpg.jpg.asset.json";
+import ap10 from "@/assets/appelo/appelo-juice-brand-color-palette-10.jpg.jpg.asset.json";
+import ap11 from "@/assets/appelo/appelo-juice-logo-variations-11.jpg.jpg.asset.json";
+
 export type Project = {
   slug: string;
   title: string;
@@ -187,6 +198,18 @@ export const projects: Project[] = [
     deliverables:
       "Packaging layout, posters publicitaires, lifestyle mockup, introduction page, front packaging, 3D carton mockup, brand color palette et logo variations.",
     size: "md",
+    gallery: [
+      { url: ap07.url, alt: "Appelo — introduction page" },
+      { url: ap08.url, alt: "Appelo — front packaging" },
+      { url: ap01.url, alt: "Appelo — packaging layout" },
+      { url: ap09.url, alt: "Appelo — 3D carton mockup" },
+      { url: ap04.url, alt: "Appelo — product poster" },
+      { url: ap02.url, alt: "Appelo — Fresh Taste Naturally ad poster" },
+      { url: ap03.url, alt: "Appelo — Pure Apple Juice pink ad poster" },
+      { url: ap06.url, alt: "Appelo — lifestyle mockup" },
+      { url: ap10.url, alt: "Appelo — brand color palette" },
+      { url: ap11.url, alt: "Appelo — logo variations and usage" },
+    ],
   },
   {
     slug: "manuel-cours-cover",

@@ -151,6 +151,7 @@ export const projects: Project[] = [
       "Logo principal, variantes du logo, icônes, palette de couleurs, typographie, patterns, carte professionnelle, van mockup, signage, brand applications et présentation finale.",
     size: "lg",
   },
+  // placeholder
   {
     slug: "travel-brochure",
     title: "Travel Brochure",

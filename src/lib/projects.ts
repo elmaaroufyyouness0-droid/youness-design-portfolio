@@ -53,6 +53,16 @@ import as08 from "@/assets/asfar/asfar-beni-mellal-color-palette-08.jpg.jpg.asse
 import as09 from "@/assets/asfar/asfar-beni-mellal-logo-variations-09.jpg_-_Copie.jpg.asset.json";
 import as10 from "@/assets/asfar/asfar-beni-mellal-logo-construction-10.jpg.jpg.asset.json";
 import as12 from "@/assets/asfar/asfar-beni-mellal-business-card-12.jpg.jpg.asset.json";
+import as13 from "@/assets/asfar/asfar-tshirt-13.jpg.asset.json";
+import as14 from "@/assets/asfar/asfar-cap-14.jpg.asset.json";
+import as15 from "@/assets/asfar/asfar-bottle-15.jpg.asset.json";
+import as16 from "@/assets/asfar/asfar-bus-16.jpg.asset.json";
+import as04g from "@/assets/asfar/asfar-logo-green-04.jpg.asset.json";
+import as11p from "@/assets/asfar/asfar-pattern-11.jpg.asset.json";
+import as17 from "@/assets/asfar/asfar-thankyou-17.jpg.asset.json";
+import eid01 from "@/assets/eid/eid-aladha-01.jpg.asset.json";
+import eid02 from "@/assets/eid/eid-mubarak-lantern-02.jpg.asset.json";
+import jeux01 from "@/assets/jeux/jeux-societe-poster.jpg.asset.json";
 
 export type Project = {
   slug: string;
@@ -90,11 +100,18 @@ export const projects: Project[] = [
       { url: as10.url, alt: "Asfar Beni Mellal — logo construction" },
       { url: as06.url, alt: "Asfar Beni Mellal — main logo (light)" },
       { url: as05.url, alt: "Asfar Beni Mellal — main logo (dark)" },
+      { url: as04g.url, alt: "Asfar Beni Mellal — main logo (green)" },
       { url: as09.url, alt: "Asfar Beni Mellal — logo variations" },
       { url: as08.url, alt: "Asfar Beni Mellal — color palette" },
       { url: as07.url, alt: "Asfar Beni Mellal — typography" },
+      { url: as11p.url, alt: "Asfar Beni Mellal — pattern" },
       { url: as02.url, alt: "Asfar Beni Mellal — nature logo mockup" },
       { url: as12.url, alt: "Asfar Beni Mellal — business card" },
+      { url: as13.url, alt: "Asfar Beni Mellal — t-shirt mockup" },
+      { url: as14.url, alt: "Asfar Beni Mellal — cap mockup" },
+      { url: as15.url, alt: "Asfar Beni Mellal — bottle mockup" },
+      { url: as16.url, alt: "Asfar Beni Mellal — bus mockup" },
+      { url: as17.url, alt: "Asfar Beni Mellal — thank you page" },
     ],
   },
   {

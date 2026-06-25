@@ -228,6 +228,7 @@ export const projects: Project[] = [
       { url: ap04.url, alt: "Appelo — product poster" },
       { url: ap02.url, alt: "Appelo — Fresh Taste Naturally ad poster" },
       { url: ap03.url, alt: "Appelo — Pure Apple Juice pink ad poster" },
+      { url: ap05.url, alt: "Appelo — Try Now apple juice poster" },
       { url: ap06.url, alt: "Appelo — lifestyle mockup" },
       { url: ap10.url, alt: "Appelo — brand color palette" },
       { url: ap11.url, alt: "Appelo — logo variations and usage" },

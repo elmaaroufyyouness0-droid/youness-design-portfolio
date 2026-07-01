@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowUpRight, Download, Mail, MessageCircle, Instagram, ArrowRight, Phone, MapPin, MapPinned, GraduationCap, Sparkles } from "lucide-react";
+import { ArrowUpRight, Download, Mail, MessageCircle, Instagram, ArrowRight, Phone, MapPin, MapPinned, GraduationCap, Sparkles, Send } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { projects, links } from "@/lib/projects";
@@ -276,6 +276,44 @@ function Index() {
               <CTA href={links.email} icon={<Mail className="h-4 w-4" />} label="Email" primary />
               <CTA href={links.whatsapp} icon={<MessageCircle className="h-4 w-4" />} label="WhatsApp" />
               <CTA href={links.instagram} icon={<Instagram className="h-4 w-4" />} label="Instagram" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA — projet / opportunité */}
+      <section className="relative py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-5 md:px-12">
+          <div className="relative overflow-hidden rounded-[36px] border border-soft bg-gradient-to-br from-[color:var(--bg-soft)] via-[color:var(--bg-main)] to-[color:var(--bg-deep)] p-8 md:p-16 glow-ring">
+            <div className="blob bg-[color:var(--lime)]/40 w-[360px] h-[360px] -top-24 -left-24" />
+            <div className="blob bg-[color:var(--orange)]/30 w-[320px] h-[320px] -bottom-24 -right-16" style={{ animationDelay: "-8s" }} />
+            <div className="relative z-10 grid gap-8 md:grid-cols-[1.5fr_1fr] items-center">
+              <div>
+                <span className="inline-block text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)] border border-soft rounded-full px-3 py-1.5 bg-card-soft">
+                  Disponible pour stage · freelance · collaboration
+                </span>
+                <h2 className="mt-5 text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] leading-[1.02] text-cream">
+                  Vous avez un projet ou <span className="bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent">une opportunité</span> ?
+                </h2>
+                <p className="mt-5 max-w-[620px] text-base md:text-lg text-muted-soft leading-relaxed">
+                  Vous avez besoin d'un design, d'un visuel professionnel, d'une collaboration freelance ou d'un stagiaire en design graphique ? Envoyez-moi votre demande et je vous répondrai dès que possible.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 md:items-end">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-4 text-sm font-semibold shadow-[0_20px_60px_-20px_rgba(182,214,90,0.6)] hover:bg-[color:var(--green)] hover:-translate-y-0.5 transition-all"
+                >
+                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" /> Envoyer une demande
+                </Link>
+                <a
+                  href={links.whatsapp}
+                  target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-4 text-sm font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all"
+                >
+                  <MessageCircle className="h-4 w-4" /> Me contacter sur WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export function Footer() {
           <a href="/#home" className="hover:text-[color:var(--lime)]">Home</a>
           <a href="/#about" className="hover:text-[color:var(--lime)]">About</a>
           <a href="/#projects" className="hover:text-[color:var(--lime)]">Projects</a>
-          <a href="/#contact" className="hover:text-[color:var(--lime)]">Contact</a>
+          <a href="/contact" className="hover:text-[color:var(--lime)]">Contact</a>
         </nav>
         <div className="text-sm text-muted-soft md:text-right">© 2026 ELMAAROUFY YOUNESS. All rights reserved.</div>
       </div>

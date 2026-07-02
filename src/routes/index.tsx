@@ -226,10 +226,10 @@ function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* PROJECTS */}
-      <section id="projects" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
+      <Reveal as="section" id="projects" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1280px]">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
@@ -241,59 +241,61 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-2.5">
+          <Reveal className="mt-10 flex flex-wrap gap-2.5" stagger y={12}>
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all ${
+                className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
                   filter === f
-                    ? "bg-[color:var(--lime)] text-[color:var(--bg-main)]"
+                    ? "bg-[color:var(--lime)] text-[color:var(--bg-main)] shadow-[0_12px_30px_-12px_rgba(182,214,90,0.55)]"
                     : "bg-card-soft border border-soft text-cream hover:bg-white/10"
                 }`}
               >
                 {f}
               </button>
             ))}
-          </div>
+          </Reveal>
 
-          <div className="mt-10 grid md:grid-cols-2 gap-6 md:gap-8">
+          <Reveal key={filter} className="mt-10 grid md:grid-cols-2 gap-6 md:gap-8" stagger y={28}>
             {visible.map((p) => (
               <ProjectCard key={p.slug} p={p} />
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
       {/* WHAT I CAN CREATE */}
-      <section className="relative py-24 md:py-32 px-5 md:px-12 lg:px-[72px]">
+      <Reveal as="section" className="relative py-24 md:py-32 px-5 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1280px]">
           <div className="max-w-2xl">
             <span className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">Services</span>
             <h2 className="mt-3 font-bold text-cream text-4xl md:text-5xl lg:text-6xl tracking-tight">Ce que je peux créer</h2>
             <p className="mt-4 text-muted-soft text-lg">Des supports visuels pensés pour l’identité, l’impression et la communication.</p>
           </div>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <Reveal className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" stagger y={24}>
             {[
               { n: "01", t: "Identité visuelle", d: "Logo, couleurs, typographie, patterns et applications de marque." },
               { n: "02", t: "Supports print", d: "Brochures, affiches, couvertures, flyers et mise en page." },
               { n: "03", t: "Packaging", d: "Design d’emballages, gabarits, mockups et présentation produit." },
               { n: "04", t: "Visuels réseaux sociaux", d: "Posters, annonces, visuels événementiels et communication digitale." },
             ].map((s) => (
-              <div key={s.n} className="group rounded-3xl border border-soft bg-card-soft p-7 h-full transition-all hover:-translate-y-1.5 hover:border-[color:var(--lime)]/55 hover:shadow-[0_20px_60px_-20px_rgba(182,214,90,0.35)]">
-                <div className="text-[color:var(--lime)] text-sm font-semibold tracking-widest">{s.n}</div>
-                <h3 className="mt-4 text-2xl font-semibold text-cream">{s.t}</h3>
+              <div key={s.n} className="group rounded-3xl border border-soft bg-card-soft p-7 h-full transition-all duration-500 hover:-translate-y-1.5 hover:bg-white/[0.07] hover:border-[color:var(--lime)]/55 hover:shadow-[0_28px_70px_-24px_rgba(182,214,90,0.45)]">
+                <div className="text-[color:var(--lime)] text-sm font-semibold tracking-widest transition-transform duration-500 group-hover:-translate-y-1">{s.n}</div>
+                <h3 className="mt-4 text-2xl font-semibold text-cream transition-transform duration-500 group-hover:-translate-y-0.5">{s.t}</h3>
                 <p className="mt-3 text-muted-soft text-[15px] leading-relaxed">{s.d}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
       {/* CONTACT CTA */}
-      <section id="contact" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
+      <Reveal as="section" id="contact" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1120px] relative rounded-[32px] border border-soft overflow-hidden">
           <div className="absolute inset-0 -z-0" style={{ background: "radial-gradient(50% 60% at 20% 20%, rgba(182,214,90,0.22), transparent 60%), radial-gradient(50% 60% at 80% 80%, rgba(242,138,22,0.20), transparent 60%), linear-gradient(180deg, #151711, #0E0F0C)" }} />
+          <div className="aurora aurora-a bg-[color:var(--lime)]/25 w-[340px] h-[340px] -top-20 -left-20" />
+          <div className="aurora aurora-b bg-[color:var(--orange)]/25 w-[340px] h-[340px] -bottom-20 -right-20" />
           <div className="relative p-8 md:p-[72px]">
             <span className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">Contact</span>
             <h2 className="mt-3 font-bold text-cream text-3xl md:text-5xl lg:text-6xl tracking-tight max-w-3xl">
@@ -303,42 +305,42 @@ function Index() {
               Je suis disponible pour un stage, une première expérience professionnelle ou une collaboration autour
               du design graphique, branding, packaging, print design et communication visuelle.
             </p>
-            <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl text-cream/90">
-              <a href={links.phone} className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:border-[color:var(--lime)]/55 transition-all">
+            <Reveal className="mt-8 grid sm:grid-cols-2 gap-4 max-w-2xl text-cream/90" stagger y={16}>
+              <a href={links.phone} className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:-translate-y-0.5 hover:border-[color:var(--lime)]/55 transition-all duration-300">
                 <Phone className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm">{links.phoneDisplay}</span>
               </a>
-              <a href={links.email} className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:border-[color:var(--lime)]/55 transition-all">
+              <a href={links.email} className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:-translate-y-0.5 hover:border-[color:var(--lime)]/55 transition-all duration-300">
                 <Mail className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm truncate">{links.emailDisplay}</span>
               </a>
-              <a href={links.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:border-[color:var(--lime)]/55 transition-all">
+              <a href={links.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3 hover:-translate-y-0.5 hover:border-[color:var(--lime)]/55 transition-all duration-300">
                 <MessageCircle className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm">{links.phoneDisplay}</span>
               </a>
               <div className="flex items-center gap-3 rounded-2xl border border-soft bg-card-soft px-4 py-3">
                 <MapPin className="h-4 w-4 text-[color:var(--lime)]" /> <span className="text-sm">{links.location}</span>
               </div>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
+            </Reveal>
+            <Reveal className="mt-8 flex flex-wrap gap-3" stagger y={12} delay={100}>
               <CTA href={links.email} icon={<Mail className="h-4 w-4" />} label="Email" primary />
               <CTA href={links.whatsapp} icon={<MessageCircle className="h-4 w-4" />} label="WhatsApp" />
               <CTA href={links.instagram} icon={<Instagram className="h-4 w-4" />} label="Instagram" />
-            </div>
+            </Reveal>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* CTA — projet / opportunité */}
-      <section className="relative py-20 md:py-28">
+      <Reveal as="section" className="relative py-20 md:py-28">
         <div className="mx-auto max-w-[1200px] px-5 md:px-12">
           <div className="relative overflow-hidden rounded-[36px] border border-soft bg-gradient-to-br from-[color:var(--bg-soft)] via-[color:var(--bg-main)] to-[color:var(--bg-deep)] p-8 md:p-16 glow-ring">
-            <div className="blob bg-[color:var(--lime)]/40 w-[360px] h-[360px] -top-24 -left-24" />
-            <div className="blob bg-[color:var(--orange)]/30 w-[320px] h-[320px] -bottom-24 -right-16" style={{ animationDelay: "-8s" }} />
+            <div className="aurora aurora-a bg-[color:var(--lime)]/40 w-[360px] h-[360px] -top-24 -left-24" />
+            <div className="aurora aurora-b bg-[color:var(--orange)]/30 w-[320px] h-[320px] -bottom-24 -right-16" />
             <div className="relative z-10 grid gap-8 md:grid-cols-[1.5fr_1fr] items-center">
               <div>
                 <span className="inline-block text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)] border border-soft rounded-full px-3 py-1.5 bg-card-soft">
                   Disponible pour stage · freelance · collaboration
                 </span>
                 <h2 className="mt-5 text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] leading-[1.02] text-cream">
-                  Vous avez un projet ou <span className="bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent">une opportunité</span> ?
+                  Vous avez un projet ou <span className="bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent gradient-drift">une opportunité</span> ?
                 </h2>
                 <p className="mt-5 max-w-[620px] text-base md:text-lg text-muted-soft leading-relaxed">
                   Vous avez besoin d'un design, d'un visuel professionnel, d'une collaboration freelance ou d'un stagiaire en design graphique ? Envoyez-moi votre demande et je vous répondrai dès que possible.
@@ -347,22 +349,22 @@ function Index() {
               <div className="flex flex-col gap-3 md:items-end">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-4 text-sm font-semibold shadow-[0_20px_60px_-20px_rgba(182,214,90,0.6)] hover:bg-[color:var(--green)] hover:-translate-y-0.5 transition-all"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-4 text-sm font-semibold shadow-[0_20px_60px_-20px_rgba(182,214,90,0.6)] hover:bg-[color:var(--green)] hover:-translate-y-0.5 transition-all duration-300 pulse-soft"
                 >
                   <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" /> Envoyer une demande
                 </Link>
                 <a
                   href={links.whatsapp}
                   target="_blank" rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-4 text-sm font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all"
+                  className="group inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-4 text-sm font-semibold hover:border-[color:var(--lime)]/60 hover:text-[color:var(--lime)] hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <MessageCircle className="h-4 w-4" /> Me contacter sur WhatsApp
+                  <MessageCircle className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" /> Me contacter sur WhatsApp
                 </a>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       <Footer />
     </div>

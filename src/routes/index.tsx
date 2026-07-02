@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Download, Mail, MessageCircle, Instagram, ArrowRight, Phone, MapPin, MapPinned, GraduationCap, Sparkles, Send } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { Reveal } from "@/components/site/Reveal";
 import { projects, links } from "@/lib/projects";
 import profile from "@/assets/youness-profile.jpg.asset.json";
 

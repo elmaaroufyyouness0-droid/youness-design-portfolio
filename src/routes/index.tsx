@@ -136,7 +136,7 @@ function Index() {
       </section>
 
       {/* INTRO / SKILLS */}
-      <section className="relative py-24 md:py-32 px-5 md:px-12 lg:px-[72px]">
+      <Reveal as="section" className="relative py-24 md:py-32 px-5 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1100px] text-center">
           <h2 className="font-bold tracking-tight text-cream text-4xl md:text-5xl lg:text-6xl">
             Design graphique, print et <span className="text-[color:var(--lime)]">identité visuelle</span>.
@@ -145,18 +145,18 @@ function Index() {
             Je développe mes compétences dans le design graphique, le branding, la mise en page, les supports print,
             le packaging et la préparation des fichiers pour l’impression.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <Reveal className="mt-10 flex flex-wrap justify-center gap-3" stagger y={16} delay={100}>
             {skills.map((s) => (
-              <span key={s} className="rounded-full bg-card-soft border border-soft text-cream text-sm px-4 py-2.5 transition-all hover:bg-[color:var(--lime)] hover:text-[color:var(--bg-main)] hover:-translate-y-0.5 cursor-default">
+              <span key={s} className="rounded-full bg-card-soft border border-soft text-cream text-sm px-4 py-2.5 transition-all duration-300 hover:bg-[color:var(--lime)] hover:text-[color:var(--bg-main)] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-10px_rgba(182,214,90,0.55)] cursor-default">
                 {s}
               </span>
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
       {/* PROFILE / ABOUT — strong section near the top */}
-      <section id="about" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
+      <Reveal as="section" id="about" className="relative py-20 md:py-28 px-5 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1280px] grid lg:grid-cols-[460px_1fr] gap-12 lg:gap-16 items-center">
           {/* Profile visual */}
           <div className="relative">

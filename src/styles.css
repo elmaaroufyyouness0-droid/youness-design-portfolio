@@ -201,3 +201,114 @@
   .bg-card-soft { background: rgba(255,255,255,.045); }
   .border-soft { border-color: rgba(255,255,255,.12); }
 }
+
+@layer utilities {
+  /* --- Scroll reveal --- */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 32px));
+    filter: blur(6px);
+    transition:
+      opacity .8s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms),
+      transform .8s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms),
+      filter .8s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
+  }
+  .reveal-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  /* Stagger direct children */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity .7s cubic-bezier(.2,.7,.2,1),
+      transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal-stagger.in-view > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger.in-view > *:nth-child(1)  { transition-delay: .05s; }
+  .reveal-stagger.in-view > *:nth-child(2)  { transition-delay: .13s; }
+  .reveal-stagger.in-view > *:nth-child(3)  { transition-delay: .21s; }
+  .reveal-stagger.in-view > *:nth-child(4)  { transition-delay: .29s; }
+  .reveal-stagger.in-view > *:nth-child(5)  { transition-delay: .37s; }
+  .reveal-stagger.in-view > *:nth-child(6)  { transition-delay: .45s; }
+  .reveal-stagger.in-view > *:nth-child(7)  { transition-delay: .53s; }
+  .reveal-stagger.in-view > *:nth-child(8)  { transition-delay: .61s; }
+  .reveal-stagger.in-view > *:nth-child(9)  { transition-delay: .69s; }
+  .reveal-stagger.in-view > *:nth-child(n+10) { transition-delay: .77s; }
+
+  /* --- Hero background animated aurora --- */
+  @keyframes aurora-a {
+    0%, 100% { transform: translate3d(-6%, -4%, 0) scale(1); }
+    50%      { transform: translate3d(8%, 6%, 0) scale(1.18); }
+  }
+  @keyframes aurora-b {
+    0%, 100% { transform: translate3d(6%, 4%, 0) scale(1.05); }
+    50%      { transform: translate3d(-8%, -6%, 0) scale(1.22); }
+  }
+  .aurora {
+    position: absolute; border-radius: 9999px; pointer-events: none;
+    filter: blur(90px); mix-blend-mode: screen; opacity: .55;
+  }
+  .aurora-a { animation: aurora-a 22s ease-in-out infinite; }
+  .aurora-b { animation: aurora-b 26s ease-in-out infinite; }
+
+  /* --- Hero parallax --- */
+  .parallax-layer {
+    transform: translate3d(calc(var(--mx, 0) * var(--depth, 6px)), calc(var(--my, 0) * var(--depth, 6px)), 0) rotate(var(--rot, 0deg));
+    transition: transform .4s cubic-bezier(.2,.7,.2,1);
+  }
+
+  /* --- Hero title line-by-line --- */
+  @keyframes hero-line {
+    from { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+    to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+  }
+  .hero-line { opacity: 0; animation: hero-line .9s cubic-bezier(.2,.7,.2,1) forwards; }
+
+  /* --- Nav underline --- */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
+    height: 2px; background: var(--lime); border-radius: 2px;
+    transform: scaleX(0); transform-origin: right center;
+    transition: transform .3s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-link:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+  /* --- Soft pulse (subtle) --- */
+  @keyframes pulse-soft {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(182,214,90,0.45); }
+    50%      { box-shadow: 0 0 0 14px rgba(182,214,90,0); }
+  }
+  .pulse-soft { animation: pulse-soft 2.6s ease-out infinite; }
+
+  /* --- Gradient drift (for CTAs / text) --- */
+  @keyframes gradient-drift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .gradient-drift {
+    background-size: 200% 200%;
+    animation: gradient-drift 8s ease-in-out infinite;
+  }
+
+  /* --- Respect reduced motion --- */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll, .reveal-stagger > *,
+    .aurora-a, .aurora-b, .float-y, .pulse-soft, .gradient-drift,
+    .hero-line, .parallax-layer {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+  }
+}

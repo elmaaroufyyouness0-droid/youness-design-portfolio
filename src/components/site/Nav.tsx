@@ -36,14 +36,14 @@ export function Nav() {
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             {items.map((i) => (
-              <a key={i.href} href={i.href} className="text-[14px] text-cream/85 hover:text-[color:var(--lime)] transition-colors">
+              <a key={i.href} href={i.href} className="nav-link text-[14px] text-cream/85 hover:text-[color:var(--lime)] transition-colors">
                 {i.label}
               </a>
             ))}
           </nav>
           <a
             href={links.cv}
-            className="hidden md:inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-5 py-2.5 text-[13px] font-semibold hover:bg-[color:var(--green)] transition-colors"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-5 py-2.5 text-[13px] font-semibold hover:bg-[color:var(--green)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_rgba(182,214,90,0.6)] transition-all duration-300"
           >
             <Download className="h-4 w-4" /> Télécharger CV
           </a>
@@ -61,8 +61,14 @@ export function Nav() {
             </button>
           </div>
           <nav className="flex-1 flex flex-col justify-center gap-6 px-6">
-            {items.map((i) => (
-              <a key={i.href} href={i.href} onClick={() => setOpen(false)} className="text-cream text-4xl font-semibold tracking-tight hover:text-[color:var(--lime)]">
+            {items.map((i, idx) => (
+              <a
+                key={i.href}
+                href={i.href}
+                onClick={() => setOpen(false)}
+                style={{ animation: `hero-line .55s cubic-bezier(.2,.7,.2,1) ${idx * 80}ms both` }}
+                className="text-cream text-4xl font-semibold tracking-tight hover:text-[color:var(--lime)] transition-colors"
+              >
                 {i.label}
               </a>
             ))}

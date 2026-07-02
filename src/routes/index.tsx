@@ -27,6 +27,36 @@ function Index() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
   const visible = filter === "All" ? projects : projects.filter((p) => p.filter === filter);
   const heroCovers = projects.filter((p) => p.cover).slice(0, 5);
+  const heroRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(hover: none)").matches) return;
+    let raf = 0;
+    const onMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect();
+      const mx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const my = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        el.style.setProperty("--mx", mx.toFixed(3));
+        el.style.setProperty("--my", my.toFixed(3));
+      });
+    };
+    const onLeave = () => {
+      el.style.setProperty("--mx", "0");
+      el.style.setProperty("--my", "0");
+    };
+    el.addEventListener("mousemove", onMove);
+    el.addEventListener("mouseleave", onLeave);
+    return () => {
+      el.removeEventListener("mousemove", onMove);
+      el.removeEventListener("mouseleave", onLeave);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen grain text-cream overflow-x-hidden" id="home">

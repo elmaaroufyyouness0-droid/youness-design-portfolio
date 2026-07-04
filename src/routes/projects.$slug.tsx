@@ -12,7 +12,7 @@ export const Route = createFileRoute("/projects/$slug")({
     const p = projects.find((x) => x.slug === params.slug);
     return {
       meta: [
-        { title: p ? `${p.title} — ELMAAROUFY YOUNESS` : "Projet" },
+        { title: p ? `${p.title} — EL MAAROUFY YOUNESS` : "Projet" },
         { name: "description", content: p?.description ?? "Projet de design graphique" },
         { property: "og:title", content: p?.title ?? "Projet" },
         { property: "og:description", content: p?.description ?? "" },

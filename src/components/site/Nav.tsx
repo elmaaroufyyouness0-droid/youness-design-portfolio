@@ -32,7 +32,7 @@ export function Nav() {
       >
         <div className="mx-auto max-w-[1440px] flex items-center justify-between px-5 md:px-12 lg:px-[72px] h-16 md:h-[76px]">
           <Link to="/" className="font-bold tracking-tight text-cream text-sm md:text-[15px]">
-            ELMAAROUFY <span className="text-[color:var(--lime)]">YOUNESS</span>
+            EL MAAROUFY <span className="text-[color:var(--lime)]">YOUNESS</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             {items.map((i) => (
@@ -55,7 +55,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] bg-[color:var(--bg-main)] md:hidden flex flex-col reveal">
           <div className="flex items-center justify-between px-5 h-16 border-b border-soft">
-            <span className="font-bold text-cream text-sm">ELMAAROUFY <span className="text-[color:var(--lime)]">YOUNESS</span></span>
+            <span className="font-bold text-cream text-sm">EL MAAROUFY <span className="text-[color:var(--lime)]">YOUNESS</span></span>
             <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-cream">
               <X className="h-6 w-6" />
             </button>

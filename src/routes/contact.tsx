@@ -8,9 +8,9 @@ import { links } from "@/lib/projects";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ELMAAROUFY YOUNESS" },
-      { name: "description", content: "Envoyez votre demande de freelance, stage, collaboration ou projet design à ELMAAROUFY YOUNESS." },
-      { property: "og:title", content: "Contact — ELMAAROUFY YOUNESS" },
+      { title: "Contact — EL MAAROUFY YOUNESS" },
+      { name: "description", content: "Envoyez votre demande de freelance, stage, collaboration ou projet design à EL MAAROUFY YOUNESS." },
+      { property: "og:title", content: "Contact — EL MAAROUFY YOUNESS" },
       { property: "og:description", content: "Envoyez votre demande de freelance, stage ou projet design." },
     ],
   }),

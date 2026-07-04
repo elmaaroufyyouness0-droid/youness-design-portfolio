@@ -10,8 +10,8 @@ import profile from "@/assets/youness-profile.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ELMAAROUFY YOUNESS — Graphic Designer Portfolio" },
-      { name: "description", content: "Portfolio de ELMAAROUFY YOUNESS, Graphic Designer Junior et étudiant en Infographie Prépresse au CMC BMK." },
+      { title: "EL MAAROUFY YOUNESS — Graphic Designer Portfolio" },
+      { name: "description", content: "Portfolio de EL MAAROUFY YOUNESS, Graphic Designer Junior et étudiant en Infographie Prépresse au CMC BMK." },
     ],
   }),
   component: Index,
@@ -73,7 +73,7 @@ function Index() {
               Portfolio 2026 · Graphic Design
             </span>
             <h1 className="mt-6 font-bold text-cream leading-[0.95] tracking-[-0.03em] text-[44px] sm:text-6xl md:text-7xl lg:text-[112px]">
-              <span className="hero-line inline-block" style={{ animationDelay: "200ms" }}>ELMAAROUFY</span>
+              <span className="hero-line inline-block" style={{ animationDelay: "200ms" }}>EL MAAROUFY</span>
               <br />
               <span
                 className="hero-line inline-block bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent gradient-drift"
@@ -163,7 +163,7 @@ function Index() {
             <div className="absolute -inset-6 -z-10 opacity-70" style={{ background: "radial-gradient(50% 50% at 30% 30%, rgba(182,214,90,0.35), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(242,138,22,0.30), transparent 60%)", filter: "blur(40px)" }} />
             <div className="relative h-[480px] md:h-[560px] rounded-[36px] border border-soft overflow-hidden bg-gradient-to-br from-[#1a1d14] via-[#13160f] to-[#0a0b08] glow-ring">
               {profile?.url ? (
-                <img src={profile.url} alt="ELMAAROUFY YOUNESS" className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
+                <img src={profile.url} alt="EL MAAROUFY YOUNESS" className="absolute inset-0 h-full w-full object-cover object-top opacity-95" />
               ) : (
                 <div className="absolute inset-0 grid place-items-center">
                   <span className="text-[180px] font-black tracking-tighter bg-gradient-to-br from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent">EY</span>
@@ -176,7 +176,7 @@ function Index() {
               </div>
               {/* bottom card */}
               <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-white/[0.06] backdrop-blur-md border border-white/15 p-5">
-                <div className="text-[10px] tracking-[0.22em] uppercase text-[color:var(--lime)]">ELMAAROUFY</div>
+                <div className="text-[10px] tracking-[0.22em] uppercase text-[color:var(--lime)]">EL MAAROUFY</div>
                 <div className="mt-1 text-cream text-2xl md:text-3xl font-bold tracking-tight">Youness</div>
                 <div className="mt-1 text-sm text-cream/75">Graphic Designer Junior · Infographie Prépresse</div>
                 <div className="mt-3 flex items-center gap-4 text-xs text-muted-soft">
@@ -197,7 +197,7 @@ function Index() {
               <span className="bg-gradient-to-r from-[color:var(--lime)] to-[color:var(--orange)] bg-clip-text text-transparent">prêt pour le terrain.</span>
             </h2>
             <div className="mt-6 space-y-4 text-cream/85 text-base md:text-lg leading-relaxed max-w-[680px]">
-              <p>Je suis ELMAAROUFY YOUNESS, étudiant en première année en Infographie Prépresse au CMC BMK, pôle Art et Industrie Graphique.</p>
+              <p>Je suis EL MAAROUFY YOUNESS, étudiant en première année en Infographie Prépresse au CMC BMK, pôle Art et Industrie Graphique.</p>
               <p>Je développe mes compétences en design graphique, branding, mise en page, supports print, packaging et préparation des fichiers pour l’impression. À travers mes projets académiques, je cherche à créer des visuels propres, cohérents et adaptés aux besoins de communication.</p>
               <p>Créatif, organisé et sérieux, je recherche une opportunité de <span className="text-cream font-semibold">stage</span> ou une <span className="text-cream font-semibold">première expérience professionnelle</span> dans une agence, une imprimerie ou une entreprise.</p>
             </div>

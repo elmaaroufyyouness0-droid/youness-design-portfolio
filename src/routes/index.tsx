@@ -93,7 +93,7 @@ function Index() {
               <a href="#projects" className="hero-line group inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3.5 text-sm font-semibold hover:bg-[color:var(--green)] hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-12px_rgba(182,214,90,0.6)] transition-all duration-300" style={{ animationDelay: "760ms" }}>
                 Voir mes projets <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
-              <a href={links.cv} className="hero-line inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-3.5 text-sm font-semibold hover:border-[color:var(--lime)]/60 hover:text-[color:var(--lime)] hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
+              <a href={links.cv} target="_blank" rel="noopener noreferrer" download="CV_EL_MAAROUFY_YOUNESS.pdf" className="hero-line inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-3.5 text-sm font-semibold hover:border-[color:var(--lime)]/60 hover:text-[color:var(--lime)] hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
                 <Download className="h-4 w-4" /> Télécharger mon CV
               </a>
               <a href="#contact" className="hero-line group inline-flex items-center gap-2 text-sm font-semibold text-cream/90 px-2 py-3.5 hover:text-[color:var(--lime)] transition-colors" style={{ animationDelay: "960ms" }}>
@@ -217,7 +217,7 @@ function Index() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={links.cv} className="inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3 text-sm font-semibold hover:bg-[color:var(--green)] hover:-translate-y-0.5 transition-all">
+              <a href={links.cv} target="_blank" rel="noopener noreferrer" download="CV_EL_MAAROUFY_YOUNESS.pdf" className="inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3 text-sm font-semibold hover:bg-[color:var(--green)] hover:-translate-y-0.5 transition-all">
                 <Download className="h-4 w-4" /> Télécharger CV
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-soft bg-card-soft text-cream px-6 py-3 text-sm font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all">

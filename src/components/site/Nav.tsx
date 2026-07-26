@@ -42,7 +42,7 @@ export function Nav() {
             ))}
           </nav>
           <a
-            href={links.cv}
+            href={links.cv} target="_blank" rel="noopener noreferrer" download="CV_EL_MAAROUFY_YOUNESS.pdf"
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-5 py-2.5 text-[13px] font-semibold hover:bg-[color:var(--green)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_rgba(182,214,90,0.6)] transition-all duration-300"
           >
             <Download className="h-4 w-4" /> Télécharger CV
@@ -72,7 +72,7 @@ export function Nav() {
                 {i.label}
               </a>
             ))}
-            <a href={links.cv} onClick={() => setOpen(false)} className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3 font-semibold">
+            <a href={links.cv} target="_blank" rel="noopener noreferrer" download="CV_EL_MAAROUFY_YOUNESS.pdf" onClick={() => setOpen(false)} className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] px-6 py-3 font-semibold">
               <Download className="h-4 w-4" /> Télécharger CV
             </a>
           </nav>

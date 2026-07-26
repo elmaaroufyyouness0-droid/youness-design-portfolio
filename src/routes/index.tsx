@@ -257,7 +257,7 @@ function Index() {
             ))}
           </Reveal>
 
-          <Reveal key={filter} className="mt-10 grid md:grid-cols-2 gap-6 md:gap-8" stagger y={28}>
+          <Reveal key={filter} className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-7 lg:gap-8 w-full max-w-full" stagger y={28}>
             {visible.map((p) => (
               <ProjectCard key={p.slug} p={p} />
             ))}
@@ -388,31 +388,47 @@ function CTA({ href, icon, label, primary }: { href: string; icon: React.ReactNo
   );
 }
 
+const CONTAIN_SLUGS = new Set([
+  "asfar-beni-mellal",
+  "serfer-delivery",
+  "travel-brochure",
+  "chikilita-chocolate-packaging",
+  "appelo-juice-packaging",
+  "manuel-cours-cover",
+]);
+
 function ProjectCard({ p }: { p: (typeof projects)[number] }) {
-  const h = p.size === "lg" ? "h-[520px] md:h-[680px]" : p.size === "md" ? "h-[460px] md:h-[560px]" : "h-[420px] md:h-[500px]";
+  const contain = CONTAIN_SLUGS.has(p.slug);
   return (
     <Link
       to="/projects/$slug"
       params={{ slug: p.slug }}
-      className={`group relative block overflow-hidden rounded-[28px] border border-soft bg-[color:var(--bg-soft)] ${h} transition-all duration-500 hover:-translate-y-2 hover:border-[color:var(--lime)]/55 hover:shadow-[0_30px_80px_-30px_rgba(182,214,90,0.45)]`}
+      className="group relative block w-full min-w-0 max-w-full h-auto overflow-hidden rounded-[20px] md:rounded-[28px] border border-soft bg-[color:var(--bg-soft)] aspect-[4/5] md:aspect-[4/3] transition-all duration-500 md:hover:-translate-y-2 hover:border-[color:var(--lime)]/55 hover:shadow-[0_30px_80px_-30px_rgba(182,214,90,0.45)]"
     >
       {p.cover ? (
-        <img src={p.cover} alt={p.alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
+        <img
+          src={p.cover}
+          alt={p.alt}
+          loading="lazy"
+          className={`absolute inset-0 block w-full h-full max-w-full object-center transition-transform duration-700 group-hover:scale-[1.04] ${
+            contain ? "object-contain p-3 md:p-5 pb-24 md:pb-28" : "object-cover"
+          }`}
+        />
       ) : (
         <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-[#1a1d14] to-[#0c0d0a] text-muted-soft text-sm p-6 text-center">
           Cover à uploader :<br /><span className="text-cream font-mono mt-2 inline-block">cover-manuel-cours-cover.jpg</span>
         </div>
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
       {/* Hover hint badge */}
-      <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[11px] tracking-[0.18em] uppercase text-cream/85 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+      <div className="absolute top-4 right-4 md:top-5 md:right-5 max-w-[calc(100%-2rem)] inline-flex items-center gap-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-cream/85 opacity-100 md:opacity-0 md:-translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
         Voir le projet <ArrowUpRight className="h-3.5 w-3.5 text-[color:var(--lime)]" />
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-        <span className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)]">{p.category}</span>
-        <div className="mt-2 flex items-end justify-between gap-4">
-          <h3 className="text-2xl md:text-3xl font-semibold text-cream tracking-tight transition-transform duration-500 group-hover:-translate-y-1">{p.title}</h3>
-          <span className="shrink-0 grid place-items-center h-11 w-11 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] transition-transform duration-500 group-hover:translate-x-1.5 group-hover:rotate-[-8deg]">
+      <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
+        <span className="block text-[10px] md:text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)]">{p.category}</span>
+        <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 md:gap-4">
+          <h3 className="min-w-0 text-[19px] leading-[1.25] md:text-3xl font-semibold text-cream tracking-tight [overflow-wrap:anywhere] transition-transform duration-500 md:group-hover:-translate-y-1">{p.title}</h3>
+          <span className="shrink-0 grid place-items-center h-10 w-10 md:h-11 md:w-11 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] transition-transform duration-500 md:group-hover:translate-x-1.5 md:group-hover:rotate-[-8deg]">
             <ArrowUpRight className="h-5 w-5" />
           </span>
         </div>

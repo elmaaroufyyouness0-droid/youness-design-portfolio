@@ -390,6 +390,166 @@ export const projects: Project[] = [
     deliverables: "Ceremony poster design final.",
     size: "md",
   },
+  {
+    slug: "volendam-rent-car-social-media",
+    title: "Volendam Rent Car",
+    shortTitle: "Volendam Rent Car",
+    category: "Social Media Design",
+    secondaryCategory: "Automotive Advertising",
+    filter: "Social",
+    type: "Professional Internship Project",
+    contextLabel: "Internship Project · ONMEDIA",
+    role: "Social Media Graphic Design",
+    tools: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: vd02.url,
+    alt: "Volendam Rent Car Drive Your Way digital advertisement",
+    shortDescription:
+      "Création de visuels publicitaires pour Volendam Rent Car, réalisée lors de mon stage chez ONMEDIA.",
+    description:
+      "Lors de mon stage au sein de l’agence ONMEDIA, j’ai participé à la création de visuels publicitaires pour Volendam Rent Car, une entreprise spécialisée dans la location de voitures. Le projet comprend deux publications destinées à la communication digitale de la marque. Le premier visuel met en avant la Dacia Logan à travers trois conseils essentiels avant et pendant la location. Le second présente plusieurs véhicules disponibles avec un message publicitaire centré sur la liberté de déplacement. L’objectif était de créer des publications claires, attrayantes et cohérentes avec l’identité visuelle de Volendam Rent Car, tout en mettant en valeur les véhicules, les informations de réservation et les services proposés. Ce projet m’a permis de travailler dans un contexte professionnel, de respecter l’identité d’un client réel et de concevoir des supports adaptés aux réseaux sociaux.",
+    deliverables:
+      "Dacia Logan promotional post, car rental safety tips design, Drive Your Way advertising post, visuels publicitaires réseaux sociaux et contenu promotionnel digital.",
+    size: "md",
+    hoverText: "Voir le projet",
+    gallery: [
+      { url: vd01.url, alt: "Volendam Rent Car Dacia Logan social media safety tips design" },
+      { url: vd02.url, alt: "Volendam Rent Car Drive Your Way digital advertisement" },
+    ],
+  },
+  {
+    slug: "crousti-restaurant-social-media-ad",
+    title: "Crousti Restaurant",
+    shortTitle: "Crousti Restaurant",
+    category: "Social Media Design",
+    secondaryCategory: "Food & Restaurant Advertising",
+    filter: "Social",
+    type: "Personal Design Project",
+    role: "Social Media Graphic Design",
+    tools: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: crRestaurant.url,
+    alt: "Crousti Restaurant social media food advertisement",
+    shortDescription:
+      "Publication publicitaire créée pour présenter les offres de Crousti Restaurant sur les réseaux sociaux.",
+    description:
+      "Création d’un visuel publicitaire pour Crousti Restaurant, destiné à promouvoir l’établissement et ses différentes offres culinaires sur les réseaux sociaux. Le design présente plusieurs plats dans une composition structurée et attractive, avec une ambiance chaleureuse inspirée de l’univers de la restauration. Les images des produits sont mises en valeur à travers trois cadres visuels, accompagnés des informations de réservation et de localisation. L’objectif était de créer une publication digitale claire, appétissante et facilement identifiable, capable d’attirer l’attention du public tout en communiquant rapidement les informations essentielles du restaurant. Ce projet personnel met en avant mes compétences en composition publicitaire, sélection d’images, hiérarchie visuelle, traitement des couleurs et création de contenu adapté aux réseaux sociaux.",
+    deliverables:
+      "Restaurant social media post, food advertising design, visuel promotionnel digital, call-to-action de réservation et communication restaurant.",
+    size: "md",
+    hoverText: "Voir le projet",
+    gallery: [
+      { url: crRestaurant.url, alt: "Crousti Restaurant social media food advertisement" },
+    ],
+  },
+  {
+    slug: "jamrah-watch-brand-identity",
+    title: "Jamrah Watch",
+    subtitle: "جمرة WATCH",
+    category: "Brand Identity",
+    filter: "Branding",
+    type: "Personal Branding Project",
+    tools: ["Adobe Illustrator", "Adobe Photoshop"],
+    cover: jamrahCover.url,
+    alt: "Jamrah Watch Arabic logo and brand identity cover",
+    shortDescription:
+      "Développement d’une identité visuelle pour une marque de montres au caractère fort et distinctif.",
+    description:
+      "Développement d’une identité visuelle pour une marque de montres au caractère fort et distinctif, construite autour du mot arabe « جمرة » et d’une typographie latine sobre.",
+    deliverables: "Présentation complète en cours de préparation.",
+    size: "md",
+    hoverText: "Découvrir le projet",
+    comingSoon: {
+      heading: "Projet en cours de développement",
+      text: "L’identité visuelle de Jamrah Watch est actuellement en cours de développement. Le projet présentera prochainement le système de logo, la palette de couleurs, la typographie, les éléments graphiques et les différentes applications de la marque.",
+      theme: "jamrah",
+      badge: "In Progress",
+    },
+  },
+  {
+    slug: "cop-visual-identity",
+    title: "COP",
+    subtitle: "Centre d’Orientation Professionnelle",
+    category: "Brand Identity",
+    secondaryCategory: "Institutional Identity",
+    filter: "Branding",
+    type: "Academic / Institutional Design Project",
+    tools: ["Adobe Illustrator", "Adobe Photoshop"],
+    cover: copCover.url,
+    alt: "COP Centre d’Orientation Professionnelle logo design",
+    shortDescription:
+      "Création d’une identité visuelle institutionnelle dédiée à l’orientation professionnelle.",
+    description:
+      "Création d’une identité visuelle institutionnelle dédiée à l’orientation professionnelle, autour d’un symbole rassemblant plusieurs figures humaines et d’une signature typographique claire.",
+    deliverables: "Présentation complète en cours de préparation.",
+    size: "md",
+    hoverText: "Découvrir le projet",
+    comingSoon: {
+      heading: "Présentation complète bientôt disponible",
+      text: "Le projet d’identité visuelle du Centre d’Orientation Professionnelle est en cours de préparation. La présentation finale comprendra le concept du logo, sa symbolique, la palette de couleurs, la typographie, les variantes et les applications institutionnelles.",
+      theme: "cop",
+      badge: "In Progress",
+    },
+  },
+  {
+    slug: "crousti-brand-identity",
+    title: "Crousti Brand Identity",
+    category: "Brand Identity",
+    secondaryCategory: "Food & Bakery Branding",
+    filter: "Branding",
+    type: "Personal Branding Project",
+    tools: ["Adobe Illustrator", "Adobe Photoshop"],
+    cover: crBrand.url,
+    alt: "Crousti bakery brand identity cover",
+    shortDescription:
+      "Développement d’une identité visuelle chaleureuse pour une marque spécialisée dans les produits frais et la viennoiserie.",
+    description:
+      "Développement d’une identité visuelle chaleureuse pour Crousti, une marque spécialisée dans les produits frais et la viennoiserie, autour de la signature « Chaque jour, tout frais ».",
+    deliverables: "Présentation complète en cours de préparation.",
+    size: "md",
+    hoverText: "Découvrir le projet",
+    comingSoon: {
+      heading: "Identité visuelle en préparation",
+      text: "La présentation complète de l’identité visuelle Crousti est actuellement en cours de développement. Elle comprendra la conception du logo, la palette chromatique, la typographie, le système graphique et les principales applications de la marque.",
+      theme: "crousti",
+      badge: "In Progress",
+    },
+  },
+  {
+    slug: "crousti-social-media-carousel",
+    title: "Crousti Social Media Carousel",
+    category: "Social Media Design",
+    secondaryCategory: "Food & Bakery Content",
+    filter: "Social",
+    type: "Personal Social Media Project",
+    tools: ["Adobe Photoshop", "Adobe Illustrator"],
+    cover: crCar01.url,
+    alt: "Crousti Fresh Morning social media design",
+    shortDescription:
+      "Série de publications digitales conçue pour développer l’univers visuel de Crousti sur les réseaux sociaux.",
+    description:
+      "Création d’une série de publications pour les réseaux sociaux de Crousti, une marque inspirée de l’univers de la viennoiserie et des produits fraîchement préparés. Le projet vise à développer une communication digitale cohérente à travers plusieurs visuels consacrés aux produits, aux horaires, aux annonces et aux messages promotionnels de la marque. La série utilise une palette basée sur le bleu, le jaune doré et les tons crème, accompagnée d’une typographie expressive et de photographies de produits mises en avant dans des compositions dynamiques. La présentation complète du carousel est en cours de développement et accueillera neuf publications organisées dans un système visuel cohérent.",
+    deliverables:
+      "Série de neuf publications réseaux sociaux, visuels produits, annonces et messages promotionnels.",
+    size: "md",
+    hoverText: "Découvrir le carousel",
+    gallery: [
+      { url: crCar01.url, alt: "Crousti Fresh Morning social media design" },
+      { url: crCar02.url, alt: "Crousti We're Open social media design" },
+    ],
+    carousel: {
+      total: 9,
+      placeholders: [
+        "Bientôt disponible",
+        "Nouveau visuel en préparation",
+        "Contenu en cours de création",
+        "Bientôt disponible",
+        "Nouveau contenu Crousti en préparation",
+        "Bientôt disponible",
+        "Contenu fraîchement conçu en route",
+        "Bientôt disponible",
+        "Présentation complète prochainement",
+      ],
+    },
+  },
 ];
 
 export const links = {

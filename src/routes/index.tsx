@@ -409,6 +409,9 @@ const CONTAIN_SLUGS = new Set([
   "chikilita-chocolate-packaging",
   "appelo-juice-packaging",
   "manuel-cours-cover",
+  "jamrah-watch-brand-identity",
+  "cop-visual-identity",
+  "crousti-brand-identity",
 ]);
 
 function ProjectCard({ p }: { p: (typeof projects)[number] }) {
@@ -436,8 +439,13 @@ function ProjectCard({ p }: { p: (typeof projects)[number] }) {
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
       {/* Hover hint badge */}
       <div className="absolute top-4 right-4 md:top-5 md:right-5 max-w-[calc(100%-2rem)] inline-flex items-center gap-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-cream/85 opacity-100 md:opacity-0 md:-translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
-        Voir le projet <ArrowUpRight className="h-3.5 w-3.5 text-[color:var(--lime)]" />
+        {p.hoverText ?? "Voir le projet"} <ArrowUpRight className="h-3.5 w-3.5 text-[color:var(--lime)]" />
       </div>
+      {p.comingSoon && (
+        <div className="absolute top-4 left-4 md:top-5 md:left-5 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[color:var(--lime)]/35 px-3 py-1.5 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-[color:var(--lime)]">
+          Coming Soon
+        </div>
+      )}
       <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
         <span className="block text-[10px] md:text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)]">{p.category}</span>
         <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 md:gap-4">

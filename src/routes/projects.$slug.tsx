@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { projects } from "@/lib/projects";
 import { sortGallery, fileNumber, titleFromUrl } from "@/lib/imageMeta";
 import { Lightbox } from "@/components/site/Lightbox";
+import { ComingSoon } from "@/components/site/ComingSoon";
 
 export const Route = createFileRoute("/projects/$slug")({
   head: ({ params }) => {
@@ -43,7 +44,7 @@ function ProjectPage() {
   const next = projects[(idx + 1) % projects.length];
 
   const gallery = useMemo(() => (p.gallery ? sortGallery(p.gallery) : []), [p.gallery]);
-  const heroImg = gallery[0]?.url ?? p.cover ?? null;
+  const heroImg = p.comingSoon ? (p.cover ?? null) : (gallery[0]?.url ?? p.cover ?? null);
   const [lbIndex, setLbIndex] = useState<number | null>(null);
 
   return (
@@ -53,7 +54,13 @@ function ProjectPage() {
       {/* HERO */}
       <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end pb-16 pt-32 md:pt-40 px-5 md:px-12 lg:px-[72px] overflow-hidden">
         {heroImg ? (
-          <img src={heroImg} alt={p.alt} className="absolute inset-0 w-full h-full object-cover scale-105 animate-[fade-in_1.1s_ease-out]" />
+          <img
+            src={heroImg}
+            alt={p.alt}
+            className={`absolute inset-0 w-full h-full scale-105 animate-[fade-in_1.1s_ease-out] ${
+              p.comingSoon ? "object-contain p-8 md:p-16" : "object-cover"
+            }`}
+          />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a1d14] to-[#0c0d0a]" />
         )}
@@ -66,6 +73,7 @@ function ProjectPage() {
           <h1 className="mt-3 font-bold tracking-[-0.03em] text-cream text-4xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[0.95] max-w-5xl">
             {p.title}
           </h1>
+          {p.subtitle && <p className="mt-3 text-cream/70 text-lg md:text-2xl">{p.subtitle}</p>}
           <p className="mt-5 text-cream/80 text-base md:text-lg max-w-2xl">{p.type} · {p.tools.join(" · ")}</p>
         </div>
       </section>
@@ -73,10 +81,10 @@ function ProjectPage() {
       {/* INFO */}
       <section className="px-5 md:px-12 lg:px-[72px] py-12 md:py-20">
         <div className="mx-auto max-w-[1280px] grid sm:grid-cols-2 lg:grid-cols-4 gap-8 border-y border-soft py-10">
-          <Info label="Category" value={p.category} />
-          <Info label="Type" value={p.type} />
+          <Info label="Category" value={p.secondaryCategory ? `${p.category} · ${p.secondaryCategory}` : p.category} />
+          <Info label="Type" value={p.contextLabel ?? p.type} />
           <Info label="Tools" value={p.tools.join(", ")} />
-          <Info label="Role" value="Graphic Design / Student Project" />
+          <Info label="Role" value={p.role ?? "Graphic Design / Student Project"} />
         </div>
       </section>
 
@@ -92,21 +100,78 @@ function ProjectPage() {
         </div>
       </section>
 
+      {p.comingSoon && (
+        <ComingSoon
+          theme={p.comingSoon.theme}
+          heading={p.comingSoon.heading}
+          text={p.comingSoon.text}
+          badge={p.comingSoon.badge}
+          title={p.title}
+          category={p.category}
+        />
+      )}
+
       {/* GALLERY */}
+      {!p.comingSoon && (
       <section className="px-5 md:px-12 lg:px-[72px] py-16">
         <div className="mx-auto max-w-[1280px]">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
-              <span className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">Gallery</span>
-              <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-cream">Visuels du projet</h2>
+              <span className="text-xs tracking-[0.22em] uppercase text-[color:var(--lime)]">{p.carousel ? "Carousel" : "Gallery"}</span>
+              <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-cream">
+                {p.carousel ? "Les publications du carousel" : "Visuels du projet"}
+              </h2>
             </div>
-            {gallery.length > 0 && (
+            {p.carousel ? (
+              <p className="text-sm text-muted-soft">
+                {gallery.length} / {p.carousel.total} publications disponibles
+              </p>
+            ) : gallery.length > 0 && (
               <p className="text-sm text-muted-soft">
                 {gallery.length} {gallery.length > 1 ? "visuels" : "visuel"} · cliquez pour agrandir
               </p>
             )}
           </div>
-          {gallery.length > 0 ? (
+          {p.carousel ? (
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+              {Array.from({ length: p.carousel.total }).map((_, i) => {
+                const g = gallery[i];
+                const slot = String(i + 1).padStart(2, "0");
+                if (g) {
+                  return (
+                    <button
+                      type="button"
+                      key={g.url}
+                      onClick={() => setLbIndex(i)}
+                      className="group relative block w-full aspect-square overflow-hidden rounded-2xl border border-soft bg-card-soft text-left transition-all hover:-translate-y-1 hover:border-[color:var(--lime)]/55 hover:shadow-[0_30px_70px_-30px_rgba(182,214,90,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--lime)]"
+                      aria-label={`Agrandir ${g.alt}`}
+                    >
+                      <img src={g.url} alt={g.alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="pointer-events-none absolute top-3 left-3 text-[10px] tracking-[0.22em] uppercase text-cream/85 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full px-2.5 py-1 font-mono">{slot}</div>
+                      <div className="pointer-events-none absolute top-3 right-3 grid place-items-center h-9 w-9 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <Expand className="h-4 w-4" />
+                      </div>
+                    </button>
+                  );
+                }
+                return (
+                  <div
+                    key={`slot-${slot}`}
+                    className="relative grid place-items-center aspect-square rounded-2xl border border-dashed border-soft bg-card-soft/60 px-5 text-center transition-all duration-500 hover:border-[color:var(--lime)]/40"
+                  >
+                    <div className="absolute top-3 left-3 text-[10px] tracking-[0.22em] uppercase text-muted-soft font-mono">{slot}</div>
+                    <div>
+                      <div className="text-[10px] tracking-[0.28em] uppercase text-[color:var(--lime)]/80">Coming Soon</div>
+                      <p className="mt-2 text-sm text-muted-soft leading-relaxed">
+                        {p.carousel!.placeholders[i] ?? "Bientôt disponible"}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : gallery.length > 0 ? (
             <div className="mt-8 columns-1 sm:columns-2 gap-6 [column-fill:_balance]">
               {gallery.map((g, i) => {
                 const num = String(fileNumber(g.url)).padStart(2, "0");
@@ -146,6 +211,7 @@ function ProjectPage() {
           )}
         </div>
       </section>
+      )}
 
       {/* NAV */}
       <section className="px-5 md:px-12 lg:px-[72px] py-16 border-t border-soft">

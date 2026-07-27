@@ -96,11 +96,20 @@ import sf17 from "@/assets/serfer/serfer-shop-signage-17.jpg.asset.json";
 import sf18 from "@/assets/serfer/serfer-thank-you-18.jpg.asset.json";
 import sf19 from "@/assets/serfer/serfer-business-card-19.png.asset.json";
 
+import vd01 from "@/assets/volendam/volendam-dacia-01.png.asset.json";
+import vd02 from "@/assets/volendam/volendam-drive-02.jpg.asset.json";
+import crRestaurant from "@/assets/crousti/crousti-restaurant-01.jpg.asset.json";
+import crBrand from "@/assets/crousti/crousti-brand-cover.jpg.asset.json";
+import crCar01 from "@/assets/crousti/crousti-carousel-01.jpg.asset.json";
+import crCar02 from "@/assets/crousti/crousti-carousel-02.jpg.asset.json";
+import jamrahCover from "@/assets/jamrah/jamrah-cover.jpg.asset.json";
+import copCover from "@/assets/cop/cop-cover.jpg.asset.json";
+
 export type Project = {
   slug: string;
   title: string;
   category: string;
-  filter: "Branding" | "Packaging" | "Print" | "Posters" | "Events";
+  filter: "Branding" | "Packaging" | "Print" | "Posters" | "Events" | "Social";
   type: string;
   tools: string[];
   cover: string | null;
@@ -109,6 +118,21 @@ export type Project = {
   deliverables: string;
   size: "lg" | "md" | "sm";
   gallery?: { url: string; alt: string }[];
+  /** Optional extras used by the newer projects */
+  shortTitle?: string;
+  subtitle?: string;
+  secondaryCategory?: string;
+  contextLabel?: string;
+  role?: string;
+  shortDescription?: string;
+  hoverText?: string;
+  comingSoon?: {
+    heading: string;
+    text: string;
+    theme: "jamrah" | "cop" | "crousti";
+    badge?: string;
+  };
+  carousel?: { total: number; placeholders: string[] };
 };
 
 export const projects: Project[] = [

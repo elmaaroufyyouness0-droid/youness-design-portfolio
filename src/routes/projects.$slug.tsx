@@ -146,7 +146,7 @@ function ProjectPage() {
                       className="group relative block w-full aspect-square overflow-hidden rounded-2xl border border-soft bg-card-soft text-left transition-all hover:-translate-y-1 hover:border-[color:var(--lime)]/55 hover:shadow-[0_30px_70px_-30px_rgba(182,214,90,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--lime)]"
                       aria-label={`Agrandir ${g.alt}`}
                     >
-                      <img src={g.url} alt={g.alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                      <img src={g.url} alt={g.alt} loading="lazy" className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.04]" />
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="pointer-events-none absolute top-3 left-3 text-[10px] tracking-[0.22em] uppercase text-cream/85 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full px-2.5 py-1 font-mono">{slot}</div>
                       <div className="pointer-events-none absolute top-3 right-3 grid place-items-center h-9 w-9 rounded-full bg-[color:var(--lime)] text-[color:var(--bg-main)] opacity-0 group-hover:opacity-100 transition-all duration-300">

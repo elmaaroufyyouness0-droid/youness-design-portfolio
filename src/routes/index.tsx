@@ -17,15 +17,29 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const filters = ["All", "Branding", "Packaging", "Print", "Posters", "Events"] as const;
+const filters = [
+  { key: "All", label: "All" },
+  { key: "Branding", label: "Brand Identity" },
+  { key: "Packaging", label: "Packaging" },
+  { key: "Print", label: "Print Design" },
+  { key: "Posters", label: "Poster Design" },
+  { key: "Social", label: "Social Media Design" },
+  { key: "Events", label: "Event Design" },
+  { key: "Coming", label: "Coming Soon" },
+] as const;
 const skills = [
   "Brand Identity", "Packaging Design", "Print Design", "Poster Design",
   "Mise en page", "Prépress", "Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign",
 ];
 
 function Index() {
-  const [filter, setFilter] = useState<(typeof filters)[number]>("All");
-  const visible = filter === "All" ? projects : projects.filter((p) => p.filter === filter);
+  const [filter, setFilter] = useState<(typeof filters)[number]["key"]>("All");
+  const visible =
+    filter === "All"
+      ? projects
+      : filter === "Coming"
+        ? projects.filter((p) => p.comingSoon)
+        : projects.filter((p) => p.filter === filter);
   const heroCovers = projects.filter((p) => p.cover).slice(0, 5);
   const heroRef = useRef<HTMLDivElement | null>(null);
 
@@ -244,15 +258,15 @@ function Index() {
           <Reveal className="mt-10 flex flex-wrap gap-2.5" stagger y={12}>
             {filters.map((f) => (
               <button
-                key={f}
-                onClick={() => setFilter(f)}
+                key={f.key}
+                onClick={() => setFilter(f.key)}
                 className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
-                  filter === f
+                  filter === f.key
                     ? "bg-[color:var(--lime)] text-[color:var(--bg-main)] shadow-[0_12px_30px_-12px_rgba(182,214,90,0.55)]"
                     : "bg-card-soft border border-soft text-cream hover:bg-white/10"
                 }`}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </Reveal>
@@ -395,6 +409,9 @@ const CONTAIN_SLUGS = new Set([
   "chikilita-chocolate-packaging",
   "appelo-juice-packaging",
   "manuel-cours-cover",
+  "jamrah-watch-brand-identity",
+  "cop-visual-identity",
+  "crousti-brand-identity",
 ]);
 
 function ProjectCard({ p }: { p: (typeof projects)[number] }) {
@@ -422,8 +439,13 @@ function ProjectCard({ p }: { p: (typeof projects)[number] }) {
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
       {/* Hover hint badge */}
       <div className="absolute top-4 right-4 md:top-5 md:right-5 max-w-[calc(100%-2rem)] inline-flex items-center gap-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-cream/85 opacity-100 md:opacity-0 md:-translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
-        Voir le projet <ArrowUpRight className="h-3.5 w-3.5 text-[color:var(--lime)]" />
+        {p.hoverText ?? "Voir le projet"} <ArrowUpRight className="h-3.5 w-3.5 text-[color:var(--lime)]" />
       </div>
+      {p.comingSoon && (
+        <div className="absolute top-4 left-4 md:top-5 md:left-5 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[color:var(--lime)]/35 px-3 py-1.5 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-[color:var(--lime)]">
+          Coming Soon
+        </div>
+      )}
       <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
         <span className="block text-[10px] md:text-[11px] tracking-[0.22em] uppercase text-[color:var(--lime)]">{p.category}</span>
         <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 md:gap-4">

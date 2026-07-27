@@ -258,15 +258,15 @@ function Index() {
           <Reveal className="mt-10 flex flex-wrap gap-2.5" stagger y={12}>
             {filters.map((f) => (
               <button
-                key={f}
-                onClick={() => setFilter(f)}
+                key={f.key}
+                onClick={() => setFilter(f.key)}
                 className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
-                  filter === f
+                  filter === f.key
                     ? "bg-[color:var(--lime)] text-[color:var(--bg-main)] shadow-[0_12px_30px_-12px_rgba(182,214,90,0.55)]"
                     : "bg-card-soft border border-soft text-cream hover:bg-white/10"
                 }`}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </Reveal>

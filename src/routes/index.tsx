@@ -17,15 +17,29 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const filters = ["All", "Branding", "Packaging", "Print", "Posters", "Events"] as const;
+const filters = [
+  { key: "All", label: "All" },
+  { key: "Branding", label: "Brand Identity" },
+  { key: "Packaging", label: "Packaging" },
+  { key: "Print", label: "Print Design" },
+  { key: "Posters", label: "Poster Design" },
+  { key: "Social", label: "Social Media Design" },
+  { key: "Events", label: "Event Design" },
+  { key: "Coming", label: "Coming Soon" },
+] as const;
 const skills = [
   "Brand Identity", "Packaging Design", "Print Design", "Poster Design",
   "Mise en page", "Prépress", "Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign",
 ];
 
 function Index() {
-  const [filter, setFilter] = useState<(typeof filters)[number]>("All");
-  const visible = filter === "All" ? projects : projects.filter((p) => p.filter === filter);
+  const [filter, setFilter] = useState<(typeof filters)[number]["key"]>("All");
+  const visible =
+    filter === "All"
+      ? projects
+      : filter === "Coming"
+        ? projects.filter((p) => p.comingSoon)
+        : projects.filter((p) => p.filter === filter);
   const heroCovers = projects.filter((p) => p.cover).slice(0, 5);
   const heroRef = useRef<HTMLDivElement | null>(null);
 

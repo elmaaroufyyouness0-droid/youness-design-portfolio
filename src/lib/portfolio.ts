@@ -32,7 +32,7 @@ export const CONTAIN_SLUGS = new Set([
   "jamrah-watch-brand-identity",
   "cop-visual-identity",
   "crousti-brand-identity",
-];
+]);
 
 export function accentOf(p: Project) {
   return ACCENTS[p.slug] ?? "#B6D65A";

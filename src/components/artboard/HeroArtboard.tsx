@@ -54,11 +54,10 @@ export function HeroArtboard({ count }: { count: number }) {
 
         <h1 className="mt-8 md:mt-12 font-bold text-cream leading-[0.86] tracking-[-0.045em] text-[15vw] lg:text-[11.5vw]">
           <span className="hero-line block" style={{ animationDelay: "120ms" }}>EL MAAROUFY</span>
-          <span
-            className="hero-line block bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent gradient-drift"
-            style={{ animationDelay: "280ms" }}
-          >
-            YOUNESS
+          <span className="hero-line block" style={{ animationDelay: "280ms" }}>
+            <span className="block bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent gradient-drift">
+              YOUNESS
+            </span>
           </span>
         </h1>
 

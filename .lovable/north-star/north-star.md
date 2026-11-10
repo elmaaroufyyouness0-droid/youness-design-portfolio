@@ -2,8 +2,8 @@
 
 # Nejma l-hadia
 
-L-agences, studios w clients kaykhdmo l-designer f stage, khedma wla projet.
+L-agences, studios w clients kay3ayno designer f khdma wla kaytalbo meno projet.
 
 ## L-mi9yas
 
-Visiteurs li kaysifto demande dyal projet wla stage kol chher
+Visiteurs li kaysifto demande dyal khdma wla projet kol chher

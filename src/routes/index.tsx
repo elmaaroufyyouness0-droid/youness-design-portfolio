@@ -26,8 +26,10 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Identité visuelle, packaging, print design et affiches — un portfolio en défilement continu inspiré des planches Illustrator.",
+          "Identité visuelle, packaging, édition, affiches et créations pour les réseaux sociaux — le portfolio de EL MAAROUFY YOUNESS.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,

@@ -104,6 +104,30 @@ import crCar01 from "@/assets/crousti/crousti-carousel-01.jpg.asset.json";
 import crCar02 from "@/assets/crousti/crousti-carousel-02.jpg.asset.json";
 import jamrahCover from "@/assets/jamrah/jamrah-cover.jpg.asset.json";
 import copCover from "@/assets/cop/cop-cover.jpg.asset.json";
+import tisma01 from "@/assets/tisma/tisma-page-1.jpg.asset.json";
+import tisma02 from "@/assets/tisma/tisma-page-2.jpg.asset.json";
+import tisma03 from "@/assets/tisma/tisma-page-3.jpg.asset.json";
+import tisma04 from "@/assets/tisma/tisma-page-4.jpg.asset.json";
+import tisma05 from "@/assets/tisma/tisma-page-5.jpg.asset.json";
+import tisma06 from "@/assets/tisma/tisma-page-6.jpg.asset.json";
+import tisma07 from "@/assets/tisma/tisma-page-7.jpg.asset.json";
+import zur01 from "@/assets/zurnatur/zurnatur-page-1.jpg.asset.json";
+import zur02 from "@/assets/zurnatur/zurnatur-page-2.jpg.asset.json";
+import zur03 from "@/assets/zurnatur/zurnatur-page-3.jpg.asset.json";
+import zur04 from "@/assets/zurnatur/zurnatur-page-4.jpg.asset.json";
+import zur05 from "@/assets/zurnatur/zurnatur-page-5.jpg.asset.json";
+import zur06 from "@/assets/zurnatur/zurnatur-page-6.jpg.asset.json";
+import zur07 from "@/assets/zurnatur/zurnatur-page-7.jpg.asset.json";
+import ideaToReality from "@/assets/mindset/idea-to-reality-01.jpg.asset.json";
+import stopDelaying from "@/assets/mindset/stop-delaying-02.jpg.asset.json";
+import powerOfChoice from "@/assets/mindset/power-of-choice-03.jpg.asset.json";
+import knowYourValue from "@/assets/mindset/know-your-value-04.jpg.asset.json";
+import valueYourTime from "@/assets/mindset/value-your-time-01.jpg.asset.json";
+import mindsetSeries from "@/assets/mindset/mindset-series-01.jpg.asset.json";
+import mindsetEndCard from "@/assets/mindset/end-card-mindset.jpg.asset.json";
+import openToProjects from "@/assets/personal-card/open-to-projects.jpg.asset.json";
+import tismaPdf from "@/assets/tisma/tisma-catalogue.pdf.asset.json";
+import zurnaturPdf from "@/assets/zurnatur/zurnatur-catalogue.pdf.asset.json";
 
 export type Project = {
   slug: string;
@@ -117,7 +141,7 @@ export type Project = {
   description: string;
   deliverables: string;
   size: "lg" | "md" | "sm";
-  gallery?: { url: string; alt: string }[];
+  gallery?: { url: string; alt: string; order?: number }[];
   /** Optional extras used by the newer projects */
   shortTitle?: string;
   subtitle?: string;
@@ -133,6 +157,7 @@ export type Project = {
     badge?: string;
   };
   carousel?: { total: number; placeholders: string[] };
+  documentUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -549,6 +574,120 @@ export const projects: Project[] = [
         "Présentation complète prochainement",
       ],
     },
+  },
+  {
+    slug: "tisma-catalogue",
+    title: "TISMA — catalogue de concept",
+    category: "Design éditorial",
+    secondaryCategory: "Artisanat et innovation",
+    filter: "Print",
+    type: "Conception de catalogue",
+    contextLabel: "Catalogue de présentation · 7 pages",
+    role: "Conception graphique et mise en page",
+    tools: ["Outils non précisés"],
+    cover: tisma01.url,
+    alt: "Couverture du catalogue TISMA, concept de récipient en terre cuite",
+    shortDescription:
+      "Catalogue présentant un concept marocain qui associe la terre cuite traditionnelle à une idée de refroidissement actif.",
+    description:
+      "Conception d’un catalogue de présentation pour TISMA. Les pages exposent le concept d’un récipient d’hydratation en terre cuite, son inspiration artisanale marocaine et l’intégration envisagée d’un système de refroidissement actif. Le document présente également la mission du projet, sa proposition de valeur, une analyse concurrentielle et une vision future du produit.",
+    deliverables:
+      "Catalogue de 7 pages : présentation, mission, concept produit, vision future, proposition de valeur, analyse concurrentielle et coordonnées du projet.",
+    size: "md",
+    hoverText: "Parcourir le catalogue",
+    documentUrl: tismaPdf.url,
+    gallery: [
+      { url: tisma01.url, alt: "TISMA — couverture du catalogue", order: 1 },
+      { url: tisma02.url, alt: "TISMA — présentation et mission", order: 2 },
+      { url: tisma03.url, alt: "TISMA — description du concept produit", order: 3 },
+      { url: tisma04.url, alt: "TISMA — vision future du projet", order: 4 },
+      { url: tisma05.url, alt: "TISMA — proposition de valeur", order: 5 },
+      { url: tisma06.url, alt: "TISMA — analyse de la concurrence", order: 6 },
+      { url: tisma07.url, alt: "TISMA — coordonnées du projet", order: 7 },
+    ],
+  },
+  {
+    slug: "zurnatur-agriculture",
+    title: "ZurNatur — agriculture durable",
+    category: "Design éditorial",
+    secondaryCategory: "Communication agricole",
+    filter: "Print",
+    type: "Conception de catalogue",
+    contextLabel: "Catalogue de présentation · 7 pages",
+    role: "Conception graphique et mise en page",
+    tools: ["Outils non précisés"],
+    cover: zur01.url,
+    alt: "Couverture du catalogue ZurNatur consacré à l’agriculture durable",
+    shortDescription:
+      "Support de présentation d’un projet agricole mettant en avant une approche biologique et la protection de la biodiversité.",
+    description:
+      "Conception d’un catalogue de présentation pour ZurNatur, un projet agricole axé sur la protection des arbres, la santé des sols et la biodiversité. Le support décrit le produit et son approche biologique, expose le problème et la solution proposés, puis présente les avantages environnementaux et une estimation budgétaire indiquée dans le document.",
+    deliverables:
+      "Catalogue de 7 pages : présentation du projet, description du produit, problème et solution, avantages, estimation budgétaire et coordonnées.",
+    size: "md",
+    hoverText: "Parcourir le catalogue",
+    documentUrl: zurnaturPdf.url,
+    gallery: [
+      { url: zur01.url, alt: "ZurNatur — couverture et présentation du projet", order: 1 },
+      { url: zur02.url, alt: "ZurNatur — présentation et mission", order: 2 },
+      { url: zur03.url, alt: "ZurNatur — description du produit", order: 3 },
+      { url: zur04.url, alt: "ZurNatur — problème et solution", order: 4 },
+      { url: zur05.url, alt: "ZurNatur — avantages du projet", order: 5 },
+      { url: zur06.url, alt: "ZurNatur — estimation budgétaire", order: 6 },
+      { url: zur07.url, alt: "ZurNatur — informations de contact", order: 7 },
+    ],
+  },
+  {
+    slug: "mindset-visual-series",
+    title: "Série de visuels motivationnels",
+    category: "Design pour les réseaux sociaux",
+    secondaryCategory: "Typographie arabe et anglaise",
+    filter: "Social",
+    type: "Série de créations graphiques",
+    contextLabel: "Collection de 7 visuels",
+    role: "Conception graphique",
+    tools: ["Outils non précisés"],
+    cover: ideaToReality.url,
+    alt: "Visuel Idea to Reality, création typographique autour du passage de l’idée à l’action",
+    shortDescription:
+      "Une série de créations graphiques autour de l’action, du temps, du choix et de la confiance en soi.",
+    description:
+      "Collection de six visuels motivationnels et d’une carte de fin, conçus autour de messages sur le passage de l’idée à l’action, la procrastination, le choix, la valeur personnelle et le temps. Les compositions mêlent typographie arabe et anglaise, portraits et aplats graphiques pour une communication pensée pour les réseaux sociaux.",
+    deliverables:
+      "Six visuels thématiques et une carte de fin, présentés dans leur ordre de série.",
+    size: "md",
+    hoverText: "Voir la série",
+    gallery: [
+      { url: ideaToReality.url, alt: "Idea to Reality — visuel sur la concrétisation des idées", order: 1 },
+      { url: stopDelaying.url, alt: "Stop Delaying — visuel sur le passage à l’action", order: 2 },
+      { url: powerOfChoice.url, alt: "The Power of Choice — visuel sur la force des décisions", order: 3 },
+      { url: knowYourValue.url, alt: "Know Your Value — visuel sur la confiance en sa valeur", order: 4 },
+      { url: valueYourTime.url, alt: "Value Your Time — visuel sur la valeur du temps", order: 5 },
+      { url: mindsetSeries.url, alt: "Mindset Series — création typographique en arabe", order: 6 },
+      { url: mindsetEndCard.url, alt: "Carte de fin invitant à découvrir et partager le contenu", order: 7 },
+    ],
+  },
+  {
+    slug: "open-to-projects-poster",
+    title: "Affiche — Open to Projects",
+    category: "Affiche de présentation personnelle",
+    filter: "Posters",
+    type: "Affiche de présentation",
+    contextLabel: "Communication personnelle",
+    role: "Conception graphique",
+    tools: ["Outils non précisés"],
+    cover: openToProjects.url,
+    alt: "Affiche personnelle Open to Projects signée EL MAAROUFY YOUNESS",
+    shortDescription:
+      "Affiche de présentation personnelle autour de la transformation d’idées en créations visuelles.",
+    description:
+      "Affiche de présentation personnelle conçue autour de la signature « Open to Projects ». La composition associe une grille de fond, une palette violette et verte, des éléments évoquant le design graphique et un appel à échanger autour de nouveaux projets.",
+    deliverables: "Affiche de présentation personnelle au format portrait.",
+    size: "md",
+    hoverText: "Agrandir l’affiche",
+    gallery: [
+      { url: openToProjects.url, alt: "Affiche Open to Projects — EL MAAROUFY YOUNESS" },
+    ],
   },
 ];
 

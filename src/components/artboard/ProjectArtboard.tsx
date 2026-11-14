@@ -178,6 +178,20 @@ export function ProjectArtboard({ p, index, total }: { p: Project; index: number
           </div>
         ) : null}
 
+        {p.documentUrl ? (
+          <Reveal className="mt-8" y={12}>
+            <a
+              href={p.documentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-b border-soft pb-2 text-sm font-semibold text-cream transition-colors hover:text-[color:var(--lime)]"
+            >
+              Consulter le catalogue PDF
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </Reveal>
+        ) : null}
+
         <Reveal className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-soft pt-6" y={16}>
           <span className="tech-label text-muted-soft">Fin de la planche {num}</span>
           <Link

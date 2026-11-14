@@ -19,6 +19,10 @@ const ACCENTS: Record<string, string> = {
   "cop-visual-identity": "#2BB3A3",
   "crousti-brand-identity": "#3B6BA5",
   "crousti-social-media-carousel": "#E5B93C",
+  "tisma-catalogue": "#C89554",
+  "zurnatur-agriculture": "#5CAF42",
+  "mindset-visual-series": "#477CF2",
+  "open-to-projects-poster": "#B66AE8",
 };
 
 /** Projects whose artwork must never be cropped (logos, layouts, documents). */
@@ -32,6 +36,10 @@ export const CONTAIN_SLUGS = new Set([
   "jamrah-watch-brand-identity",
   "cop-visual-identity",
   "crousti-brand-identity",
+  "tisma-catalogue",
+  "zurnatur-agriculture",
+  "mindset-visual-series",
+  "open-to-projects-poster",
 ]);
 
 export function accentOf(p: Project) {

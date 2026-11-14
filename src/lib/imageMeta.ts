@@ -20,8 +20,10 @@ export function titleFromUrl(url: string, projectSlug: string): string {
     .join(" ");
 }
 
-export type GalleryItem = { url: string; alt: string };
+export type GalleryItem = { url: string; alt: string; order?: number };
 
 export function sortGallery<T extends GalleryItem>(items: T[]): T[] {
-  return [...items].sort((a, b) => fileNumber(a.url) - fileNumber(b.url));
+  return [...items].sort(
+    (a, b) => (a.order ?? fileNumber(a.url)) - (b.order ?? fileNumber(b.url)),
+  );
 }

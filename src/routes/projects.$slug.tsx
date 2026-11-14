@@ -17,6 +17,8 @@ export const Route = createFileRoute("/projects/$slug")({
         { name: "description", content: p?.description ?? "Projet de design graphique" },
         { property: "og:title", content: p?.title ?? "Projet" },
         { property: "og:description", content: p?.description ?? "" },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         ...(p?.cover ? [{ property: "og:image", content: p.cover }, { name: "twitter:image", content: p.cover }] : []),
       ],
     };
@@ -98,6 +100,16 @@ function ProjectPage() {
             <div className="text-xs tracking-[0.22em] uppercase text-muted-soft">Deliverables</div>
             <p className="mt-2 text-cream/85 leading-relaxed">{p.deliverables}</p>
           </div>
+          {p.documentUrl ? (
+            <a
+              href={p.documentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 border-b border-soft pb-2 text-sm font-semibold text-cream transition-colors hover:text-[color:var(--lime)]"
+            >
+              Consulter le catalogue PDF <ArrowUpRight className="h-4 w-4" />
+            </a>
+          ) : null}
         </div>
       </section>
 

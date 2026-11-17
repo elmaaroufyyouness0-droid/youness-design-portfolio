@@ -163,7 +163,7 @@ export function ProjectArtboard({ p, index, total }: { p: Project; index: number
                   >
                     <img src={g.url} alt={g.alt} loading="lazy" decoding="async" className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]" />
                     <span className="tech-label pointer-events-none absolute left-3 top-3 rounded-full border border-white/12 bg-black/55 px-2 py-1 text-cream/85 backdrop-blur-sm">
-                      {String(fileNumber(g.url)).padStart(2, "0")}
+                      {String(g.order ?? fileNumber(g.url)).padStart(2, "0")}
                     </span>
                     <span className="pointer-events-none absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full text-[color:var(--bg-main)] opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ background: accent }}>
                       <Expand className="h-4 w-4" />

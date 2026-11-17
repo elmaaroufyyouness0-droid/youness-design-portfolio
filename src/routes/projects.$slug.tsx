@@ -5,6 +5,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { projects } from "@/lib/projects";
 import { sortGallery, fileNumber, titleFromUrl } from "@/lib/imageMeta";
+import { CONTAIN_SLUGS } from "@/lib/portfolio";
 import { Lightbox } from "@/components/site/Lightbox";
 import { ComingSoon } from "@/components/site/ComingSoon";
 
@@ -60,14 +61,14 @@ function ProjectPage() {
           <img
             src={heroImg}
             alt={p.alt}
-            className={`absolute inset-0 w-full h-full scale-105 animate-[fade-in_1.1s_ease-out] ${
-              p.comingSoon ? "object-contain p-8 md:p-16" : "object-cover"
+            className={`absolute inset-0 w-full h-full animate-[fade-in_1.1s_ease-out] ${
+              p.comingSoon || CONTAIN_SLUGS.has(p.slug) ? "object-contain p-8 md:p-16" : "object-cover"
             }`}
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a1d14] to-[#0c0d0a]" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--bg-main)] via-[color:var(--bg-main)]/70 to-[color:var(--bg-main)]/40" />
+        <div className={`absolute inset-0 bg-gradient-to-t from-[color:var(--bg-main)] ${CONTAIN_SLUGS.has(p.slug) ? "via-[color:var(--bg-main)]/30 to-[color:var(--bg-main)]/10" : "via-[color:var(--bg-main)]/70 to-[color:var(--bg-main)]/40"}`} />
         <div className="relative z-10 mx-auto max-w-[1280px] w-full reveal">
           <Link to="/" className="inline-flex items-center gap-2 text-sm text-cream/80 hover:text-[color:var(--lime)]">
             <ArrowLeft className="h-4 w-4" /> Retour aux projets

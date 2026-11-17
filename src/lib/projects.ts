@@ -686,7 +686,7 @@ export const projects: Project[] = [
     size: "md",
     hoverText: "Agrandir l’affiche",
     gallery: [
-      { url: openToProjects.url, alt: "Affiche Open to Projects — EL MAAROUFY YOUNESS" },
+      { url: openToProjects.url, alt: "Affiche Open to Projects — EL MAAROUFY YOUNESS", order: 1 },
     ],
   },
 ];

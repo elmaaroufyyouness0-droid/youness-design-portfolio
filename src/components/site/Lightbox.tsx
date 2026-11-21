@@ -32,7 +32,8 @@ export function Lightbox({ images, index, onClose, onIndex, projectTitle, projec
 
   const img = images[index];
   if (!img) return null;
-  const title = titleFromUrl(img.url, projectSlug);
+  const generatedTitle = titleFromUrl(img.url, projectSlug);
+  const title = generatedTitle.toLowerCase() === "page" ? img.alt : generatedTitle;
   const counter = `${String(index + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
 
   return (

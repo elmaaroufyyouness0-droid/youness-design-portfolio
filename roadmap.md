@@ -5,3 +5,4 @@
 - [x] Keep artwork uncropped, preserve accurate French descriptions, and connect new work to the existing project viewer.
 - [x] Recheck project pages, catalogue links, mobile layout, and final preview build.
 - [x] Update study-year references to second year across the portfolio.
+- [ ] Describe Youness as a second-year trainee at an institute, not as a student.

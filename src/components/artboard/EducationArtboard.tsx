@@ -6,7 +6,7 @@ const entries = [
   {
     icon: GraduationCap,
     period: "En cours",
-    title: "Infographie Prépresse — 1ère année",
+    title: "Infographie Prépresse — 2ème année",
     place: "CMC BMK · Pôle Art et Industrie Graphique, Béni Mellal",
     text: "Formation en design graphique, mise en page, chaîne graphique et préparation des fichiers pour l’impression.",
   },

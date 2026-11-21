@@ -42,7 +42,7 @@ export function AboutArtboard({ count }: { count: number }) {
             </h2>
             <div className="mt-6 space-y-4 text-cream/85 text-base md:text-lg leading-relaxed max-w-[680px]">
               <p>
-                Je suis EL MAAROUFY YOUNESS, étudiant en première année en Infographie Prépresse au CMC BMK,
+                Je suis EL MAAROUFY YOUNESS, étudiant en deuxième année en Infographie Prépresse au CMC BMK,
                 pôle Art et Industrie Graphique.
               </p>
               <p>
@@ -62,7 +62,7 @@ export function AboutArtboard({ count }: { count: number }) {
               {[
                 { k: String(count), v: "Projets" },
                 { k: "6", v: "Catégories" },
-                { k: "1ère", v: "Année CMC" },
+                { k: "2ème", v: "Année CMC" },
               ].map((s) => (
                 <div key={s.v} className="rounded-2xl border border-soft bg-card-soft px-4 py-3">
                   <div className="text-cream text-2xl font-bold tracking-tight">{s.k}</div>

@@ -67,7 +67,7 @@ export function HeroArtboard({ count }: { count: number }) {
               Graphic Designer Junior <span className="text-muted-soft">/</span> Infographie Prépresse
             </p>
             <p className="hero-line mt-4 max-w-[620px] text-base md:text-lg text-muted-soft leading-relaxed" style={{ animationDelay: "560ms" }}>
-              Étudiant en première année en Infographie Prépresse au CMC BMK, passionné par le branding,
+              Étudiant en deuxième année en Infographie Prépresse au CMC BMK, passionné par le branding,
               le print design, le packaging et la communication visuelle.
             </p>
             <div className="hero-line mt-6 flex flex-wrap items-center gap-4 tech-label text-muted-soft" style={{ animationDelay: "660ms" }}>

@@ -6,3 +6,4 @@
 - [x] Recheck project pages, catalogue links, mobile layout, and final preview build.
 - [x] Update study-year references to second year across the portfolio.
 - [x] Describe Youness as a second-year trainee at an institute, not as a student.
+- [ ] Make the portfolio easier to navigate and contact through, without changing its content or visual identity.

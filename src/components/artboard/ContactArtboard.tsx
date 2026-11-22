@@ -10,7 +10,7 @@ export function ContactArtboard() {
       <div className="aurora aurora-a bg-[color:var(--lime)]/25 w-[420px] h-[420px] -top-24 -left-24" />
       <div className="aurora aurora-b bg-[color:var(--orange)]/20 w-[380px] h-[380px] bottom-0 right-[-120px]" />
       <div className="artboard-inner relative z-10">
-        <SectionRule num="05" title="Contact" note="Disponible pour stage · freelance · collaboration" />
+        <SectionRule num="05" title="Contact" note="Stagiaire · freelance · collaboration" />
 
         <Reveal className="mt-10 grid gap-10 lg:grid-cols-[1.3fr_1fr] items-start" y={28}>
           <div>
@@ -22,8 +22,8 @@ export function ContactArtboard() {
               ?
             </h2>
             <p className="mt-5 max-w-[640px] text-lg text-muted-soft leading-relaxed">
-              Je suis disponible pour un stage, une première expérience professionnelle ou une collaboration autour
-              du design graphique, branding, packaging, print design et communication visuelle.
+              Je suis disponible pour des opportunités professionnelles et des collaborations autour du design
+              graphique, du branding, du packaging, du print design et de la communication visuelle.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

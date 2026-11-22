@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — EL MAAROUFY YOUNESS" },
-      { name: "description", content: "Envoyez votre demande de freelance, stage, collaboration ou projet design à EL MAAROUFY YOUNESS." },
+      { name: "description", content: "Envoyez une demande d’opportunité professionnelle, de freelance, de collaboration ou de projet design à EL MAAROUFY YOUNESS." },
       { property: "og:title", content: "Contact — EL MAAROUFY YOUNESS" },
       { property: "og:description", content: "Contactez EL MAAROUFY YOUNESS pour un projet, une collaboration ou une mission de design graphique." },
       { property: "og:type", content: "website" },
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/contact")({
 
 const requestTypes = [
   "Freelance project",
-  "Stage / Internship",
+  "Opportunité professionnelle",
   "Collaboration",
   "Logo design",
   "Social media design",
@@ -119,7 +119,7 @@ function ContactPage() {
               Envoyer une <span className="bg-gradient-to-r from-[color:var(--lime)] via-[color:var(--green)] to-[color:var(--orange)] bg-clip-text text-transparent">demande</span>
             </h1>
             <p className="mt-4 max-w-[640px] text-base md:text-lg text-muted-soft leading-relaxed">
-              Remplissez ce formulaire pour une demande de freelance, stage, collaboration ou projet design.
+              Remplissez ce formulaire pour une opportunité professionnelle, une mission freelance, une collaboration ou un projet design.
             </p>
           </div>
 

@@ -35,26 +35,24 @@ export function AboutArtboard({ count }: { count: number }) {
 
           <Reveal y={30} delay={80}>
             <h2 className="font-bold text-cream text-[9vw] sm:text-5xl lg:text-[64px] leading-[1.02] tracking-[-0.03em]">
-              Étudiant créatif,{" "}
+              Stagiaire créatif,{" "}
               <span className="bg-gradient-to-r from-[color:var(--lime)] to-[color:var(--orange)] bg-clip-text text-transparent">
                 prêt pour le terrain.
               </span>
             </h2>
             <div className="mt-6 space-y-4 text-cream/85 text-base md:text-lg leading-relaxed max-w-[680px]">
               <p>
-                Je suis EL MAAROUFY YOUNESS, étudiant en deuxième année en Infographie Prépresse au CMC BMK,
+                Je suis EL MAAROUFY YOUNESS, stagiaire en deuxième année de formation en Infographie Prépresse à l’institut CMC BMK,
                 pôle Art et Industrie Graphique.
               </p>
               <p>
                 Je développe mes compétences en design graphique, branding, mise en page, supports print,
-                packaging et préparation des fichiers pour l’impression. À travers mes projets académiques,
+                packaging et préparation des fichiers pour l’impression. À travers mes projets de formation,
                 je cherche à créer des visuels propres, cohérents et adaptés aux besoins de communication.
               </p>
               <p>
-                Créatif, organisé et sérieux, je recherche une opportunité de{" "}
-                <span className="text-cream font-semibold">stage</span> ou une{" "}
-                <span className="text-cream font-semibold">première expérience professionnelle</span> dans une agence,
-                une imprimerie ou une entreprise.
+                Créatif, organisé et sérieux, je recherche des opportunités professionnelles et des projets de design
+                dans une agence, une imprimerie ou une entreprise.
               </p>
             </div>
 

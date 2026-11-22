@@ -80,7 +80,7 @@ export function ProjectArtboard({ p, index, total }: { p: Project; index: number
         {/* Technical annotations */}
         <Reveal className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 border-y border-soft py-8" stagger y={18}>
           <Meta label="Type" value={p.contextLabel ?? p.type} />
-          <Meta label="Rôle" value={p.role ?? "Graphic Design / Projet étudiant"} />
+          <Meta label="Rôle" value={p.role ?? "Design graphique / Projet de formation"} />
           <Meta label="Outils" value={p.tools.join(", ")} />
           <Meta label="Livrables" value={p.deliverables} />
         </Reveal>

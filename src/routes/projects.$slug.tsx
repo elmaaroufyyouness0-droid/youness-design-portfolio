@@ -88,7 +88,7 @@ function ProjectPage() {
           <Info label="Category" value={p.secondaryCategory ? `${p.category} · ${p.secondaryCategory}` : p.category} />
           <Info label="Type" value={p.contextLabel ?? p.type} />
           <Info label="Tools" value={p.tools.join(", ")} />
-          <Info label="Role" value={p.role ?? "Graphic Design / Student Project"} />
+          <Info label="Role" value={p.role ?? "Design graphique / Projet de formation"} />
         </div>
       </section>
 

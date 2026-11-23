@@ -1,18 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { links } from "@/lib/projects";
 
 const items = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
+  { label: "Accueil", href: "/#home" },
+  { label: "À propos", href: "/#about" },
+  { label: "Projets", href: "/#works" },
   { label: "Contact", href: "/contact" },
 ];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -20,7 +21,18 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const previousOverflow = document.body.style.overflow;
+    if (open) document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || !open) return;
+      setOpen(false);
+      window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+    };
+    if (open) window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
   }, [open]);
   return (
     <>
@@ -47,20 +59,36 @@ export function Nav() {
           >
             <Download className="h-4 w-4" /> Télécharger CV
           </a>
-          <button className="md:hidden text-cream" onClick={() => setOpen(true)} aria-label="Open menu">
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="md:hidden text-cream"
+            onClick={() => setOpen(true)}
+            aria-label="Ouvrir le menu"
+            aria-expanded={open}
+            aria-controls="site-mobile-menu"
+          >
             <Menu className="h-6 w-6" />
           </button>
         </div>
       </header>
       {open && (
-        <div className="fixed inset-0 z-[60] bg-[color:var(--bg-main)] md:hidden flex flex-col reveal">
+        <div id="site-mobile-menu" className="fixed inset-0 z-[60] bg-[color:var(--bg-main)] md:hidden flex flex-col reveal">
           <div className="flex items-center justify-between px-5 h-16 border-b border-soft">
             <span className="font-bold text-cream text-sm">EL MAAROUFY <span className="text-[color:var(--lime)]">YOUNESS</span></span>
-            <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-cream">
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+              }}
+              aria-label="Fermer le menu"
+              className="text-cream"
+            >
               <X className="h-6 w-6" />
             </button>
           </div>
-          <nav className="flex-1 flex flex-col justify-center gap-6 px-6">
+          <nav aria-label="Navigation mobile" className="flex-1 flex flex-col justify-center gap-6 px-6">
             {items.map((i, idx) => (
               <a
                 key={i.href}

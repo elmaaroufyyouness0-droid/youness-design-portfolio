@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { links } from "@/lib/projects";
 
@@ -16,6 +16,7 @@ export function GlobalNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -43,7 +44,20 @@ export function GlobalNav() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const previousOverflow = document.body.style.overflow;
+    if (open) document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || !open) return;
+      setOpen(false);
+      window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+    };
+
+    if (open) window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
   }, [open]);
 
   const go = (id: string) => {
@@ -96,19 +110,35 @@ export function GlobalNav() {
             </a>
           </div>
 
-          <button className="md:hidden text-cream" onClick={() => setOpen(true)} aria-label="Ouvrir le menu">
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="md:hidden text-cream"
+            onClick={() => setOpen(true)}
+            aria-label="Ouvrir le menu"
+            aria-expanded={open}
+            aria-controls="mobile-portfolio-menu"
+          >
             <Menu className="h-6 w-6" />
           </button>
         </div>
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[80] bg-[color:var(--bg-main)] md:hidden flex flex-col">
+        <div id="mobile-portfolio-menu" className="fixed inset-0 z-[80] bg-[color:var(--bg-main)] md:hidden flex flex-col">
           <div className="flex items-center justify-between px-5 h-16 border-b border-soft">
             <span className="font-bold text-cream text-sm">
               EL MAAROUFY <span className="text-[color:var(--lime)]">YOUNESS</span>
             </span>
-            <button onClick={() => setOpen(false)} aria-label="Fermer le menu" className="text-cream">
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+              }}
+              aria-label="Fermer le menu"
+              className="text-cream"
+            >
               <X className="h-6 w-6" />
             </button>
           </div>

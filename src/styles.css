@@ -159,7 +159,7 @@
 
 @layer utilities {
   /* --- Illustrator artboard language --- */
-  .artboard { position: relative; }
+  .artboard { position: relative; scroll-margin-top: 5.5rem; }
   .artboard-inner {
     margin-inline: auto;
     width: 100%;
@@ -336,6 +336,7 @@
 
   /* --- Respect reduced motion --- */
   @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
     .reveal-on-scroll, .reveal-stagger > *,
     .aurora-a, .aurora-b, .float-y, .pulse-soft, .gradient-drift,
     .hero-line, .parallax-layer {

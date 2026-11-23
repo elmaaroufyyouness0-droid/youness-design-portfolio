@@ -7,10 +7,10 @@ export function Footer() {
           <div className="text-sm text-muted-soft mt-1">Graphic Designer Junior / Infographie Prépresse</div>
           <div className="text-sm text-muted-soft">Béni Mellal, Morocco</div>
         </div>
-        <nav className="flex flex-wrap gap-5 md:justify-center text-sm text-cream/80">
-          <a href="/#home" className="hover:text-[color:var(--lime)]">Home</a>
-          <a href="/#about" className="hover:text-[color:var(--lime)]">About</a>
-          <a href="/#projects" className="hover:text-[color:var(--lime)]">Projects</a>
+        <nav aria-label="Navigation de pied de page" className="flex flex-wrap gap-5 md:justify-center text-sm text-cream/80">
+          <a href="/#home" className="hover:text-[color:var(--lime)]">Accueil</a>
+          <a href="/#about" className="hover:text-[color:var(--lime)]">À propos</a>
+          <a href="/#works" className="hover:text-[color:var(--lime)]">Projets</a>
           <a href="/contact" className="hover:text-[color:var(--lime)]">Contact</a>
         </nav>
         <div className="text-sm text-muted-soft md:text-right">© 2026 EL MAAROUFY YOUNESS. All rights reserved.</div>
